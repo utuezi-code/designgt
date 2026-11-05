@@ -1,44 +1,196 @@
 <template>
   <style>
-    #root { position: absolute; inset: 0; overflow: hidden; background: #e45846; font-family: "Poppins", sans-serif; }
-    #dr-card { position: absolute; left: 309px; top: 330px; width: 462px; height: 1010px; border-radius: 40px; overflow: hidden; background: #f3e7da; box-shadow: 0 40px 80px rgba(110, 25, 10, 0.35); }
-    #dr-card img { position: absolute; left: 0; top: 0; width: 462px; height: 1010px; object-fit: cover; }
-    #dr-scan { position: absolute; left: 0; top: 0; width: 462px; height: 8px; background: #ffffff; box-shadow: 0 0 0 1px rgba(255,255,255,0.4); }
-    #dr-box { position: absolute; left: 24px; top: 140px; width: 414px; height: 850px; border: 6px solid #ffffff; border-radius: 34px; box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.25); }
-    #dr-chip { position: absolute; left: 0; width: 1080px; top: 380px; text-align: center; }
-    #dr-chip span { display: inline-flex; align-items: center; gap: 14px; padding: 14px 30px; border-radius: 999px; background: #fff; color: #1b1b1b; font-weight: 700; font-size: 36px; box-shadow: 0 10px 24px rgba(0,0,0,0.2); }
-    #dr-chip b { width: 16px; height: 16px; border-radius: 50%; background: #e45846; display: inline-block; }
-    .tx { position: absolute; left: 0; width: 1080px; top: 170px; text-align: center; color: #fff; font-weight: 700; font-size: 104px; letter-spacing: -0.03em; white-space: nowrap; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    #d-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+    .dt { position: absolute; left: 0; width: 1080px; top: 200px; text-align: center; white-space: nowrap; }
+    .dt .h { display: block; font-weight: 700; font-size: 96px; line-height: 1.04; letter-spacing: -0.03em; }
     .w { display: inline-block; opacity: 0; }
-    .pp { position: absolute; left: 0; top: 0; padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 42px; white-space: nowrap; box-shadow: 0 12px 26px rgba(80,20,10,0.3); opacity: 0; }
-    #pp0 { background: #1b1b1b; color: #fff; }
-    #pp1 { background: #ffffff; color: #c8432f; }
+    .acc { color: #c8432f; }
+    #d-scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 520px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 70%, rgba(255,255,255,0) 100%); }
+    #d-phone { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    #d-screen { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .ico { width: 14px; height: 14px; }
+    #d-hbtn { left: 17px; top: 163px; width: 207px; height: 31px; border-radius: 16px; background: #e45846; color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    #d-hgal { left: 241px; top: 163px; width: 132px; height: 31px; border-radius: 16px; background: #fcede8; color: #a8361f; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .step { width: 34px; height: 34px; border-radius: 50%; background: #fcede8; display: flex; align-items: center; justify-content: center; }
+    .stepl { width: 120px; text-align: center; font-weight: 700; font-size: 12px; }
+    .stepl span { display: block; font-weight: 400; font-size: 10px; color: #6b6b6b; }
+    /* generic social feed (no brand) */
+    #d-feedtop { left: 0; top: 0; width: 390px; height: 52px; background: #fff; border-bottom: 1px solid #efefef; }
+    #d-feed { left: 0; top: 52px; width: 390px; }
+    .story { position: absolute; top: 10px; width: 58px; height: 58px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #f2b33d, #e45846, #b33a7a); }
+    .story i { display: block; width: 52px; height: 52px; border-radius: 50%; border: 3px solid #fff; background: #ddd; overflow: hidden; }
+    .post { position: absolute; left: 0; width: 390px; }
+    .post .ph { position: absolute; left: 0; top: 48px; width: 390px; height: 488px; overflow: hidden; background: #eee; }
+    .post .ph img { position: absolute; left: 0; top: 0; width: 390px; height: 488px; object-fit: cover; }
+    .post .u { position: absolute; left: 50px; top: 14px; font-size: 13px; font-weight: 700; }
+    .post .av { position: absolute; left: 12px; top: 10px; width: 30px; height: 30px; border-radius: 50%; background: #e7d9cf; }
+    .post .act { position: absolute; left: 12px; top: 546px; display: flex; gap: 14px; }
+    .post .likes { position: absolute; left: 12px; top: 578px; font-size: 12.5px; font-weight: 700; }
+    .post .cap { position: absolute; left: 12px; top: 598px; width: 366px; font-size: 12.5px; line-height: 1.35; }
+    #d-shot { left: 14px; top: 600px; width: 96px; height: 200px; border-radius: 12px; border: 3px solid #fff; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,0.35); background: #fff; opacity: 0; }
+    #d-shot img { position: absolute; left: 0; top: 0; width: 96px; height: 200px; object-fit: cover; object-position: 50% 30%; }
+    #d-flash { left: 0; top: 0; width: 390px; height: 844px; background: #fff; opacity: 0; }
+    /* gallery picker */
+    #d-pick .cell { position: absolute; width: 128px; height: 128px; overflow: hidden; background: #eee; }
+    #d-pick .cell img { position: absolute; left: 0; top: 0; width: 128px; height: 128px; object-fit: cover; }
+    /* recognition viewer */
+    #d-view { background: #0f0f0f; }
+    #d-view .pic { position: absolute; left: 0; top: 70px; width: 390px; height: 640px; overflow: hidden; }
+    #d-view .pic img { position: absolute; left: 49px; top: 0; width: 292px; height: 640px; }
+    #d-box { left: 60px; top: 150px; width: 270px; height: 560px; border: 3px solid #fff; border-radius: 24px; box-shadow: 0 0 0 2000px rgba(0,0,0,0.3); opacity: 0; }
+    #d-chip { left: 55px; top: 96px; width: 280px; height: 40px; border-radius: 20px; background: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); opacity: 0; }
+    #d-chip b { width: 10px; height: 10px; border-radius: 50%; background: #e45846; display: inline-block; }
+    /* results */
+    .thumb { overflow: hidden; border-radius: 9px; background: #222; }
+    .card { left: 0; width: 390px; height: 106px; }
+    .card .av { left: 9px; top: 0; width: 56px; height: 56px; border-radius: 9px; background: #fcede8; color: #c8432f; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+    .pr { left: 74px; top: -2px; font-weight: 700; font-size: 19px; }
+    .pn { left: 74px; top: 25px; font-size: 12px; }
+    .sh { left: 74px; top: 41px; font-weight: 700; font-size: 14px; }
+    .lo { left: 74px; top: 61px; font-size: 11px; color: #555; }
+    .bt { left: 9px; top: 78px; width: 372px; height: 26px; border-radius: 13px; background: #fcede8; color: #a8361f; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+    #d-finger { left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
   </style>
-  <div id="root" data-composition-id="dress" data-width="1080" data-height="1920" data-layout-allow-overlap>
-    <div id="dr-card"><img src="assets/photos/robe.jpg" alt="Robe longue en wax verte" /><div id="dr-scan"></div><div id="dr-box"></div></div>
-    <div id="dr-chip" class="clip" data-start="1.15" data-duration="1.75" data-track-index="3"><span><b></b>Robe longue en wax · verte</span></div>
-    <div id="dr-t1" class="tx clip" data-start="0.15" data-duration="1.3" data-track-index="1"><span class="w">Une</span> <span class="w">robe</span> <span class="w">aussi ?</span></div>
-    <div id="dr-t2" class="tx clip" data-start="1.55" data-duration="1.4" data-track-index="2"><span class="w">Trouvée.</span></div>
-    <div id="pp0" class="pp">18 500 F · 900 m</div>
-    <div id="pp1" class="pp">22 000 F · 1,3 km</div>
+  <div id="root" data-composition-id="dress" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="d-bg"></div>
+    <div id="d-phone">
+      <div id="d-screen" data-layout-allow-occlusion data-layout-ignore>
+        <div class="scr" id="d-social">
+          <div id="d-feed" class="abs">
+            <div class="abs" style="left:0;top:0;width:390px;height:84px;border-bottom:1px solid #efefef"></div>
+            <div class="story" style="left:10px"><i></i></div><div class="story" style="left:82px"><i></i></div><div class="story" style="left:154px"><i></i></div><div class="story" style="left:226px"><i></i></div><div class="story" style="left:298px"><i></i></div>
+            <div class="post" style="top:90px"><div class="av"></div><div class="u">sneakers.abidjan</div><div class="ph"><img src="assets/photos/sneakers-bw.jpg" alt="" /></div>
+              <div class="act"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="#111" stroke-width="2"/></svg><svg viewBox="0 0 24 24" width="24" height="24"><path d="M5 19l1.5-4A7 7 0 1 1 9 18z" fill="none" stroke="#111" stroke-width="2"/></svg><svg viewBox="0 0 24 24" width="24" height="24"><path d="M21 4L3 11l7 2 2 7z" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round"/></svg></div>
+              <div class="likes">1 208 j'aime</div><div class="cap"><b>sneakers.abidjan</b> Nouveaux arrivages cette semaine</div></div>
+            <div class="post" style="top:740px"><div class="av"></div><div class="u">mode.abidjan</div><div class="ph"><img src="assets/photos/robe.jpg" style="object-position:50% 30%" alt="" /></div>
+              <div class="act"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="#e45846" stroke="#e45846" stroke-width="2"/></svg><svg viewBox="0 0 24 24" width="24" height="24"><path d="M5 19l1.5-4A7 7 0 1 1 9 18z" fill="none" stroke="#111" stroke-width="2"/></svg><svg viewBox="0 0 24 24" width="24" height="24"><path d="M21 4L3 11l7 2 2 7z" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round"/></svg></div>
+              <div class="likes">4 532 j'aime</div><div class="cap"><b>mode.abidjan</b> La robe longue en wax de la saison. Où la trouver ?</div></div>
+            <div class="post" style="top:1390px"><div class="av"></div><div class="u">tech.cocody</div><div class="ph"><img src="assets/photos/phone-hand.jpg" alt="" /></div></div>
+          </div>
+          <div id="d-feedtop" class="abs"><div class="abs b" style="left:16px;top:13px;font-size:20px;letter-spacing:-0.02em">Fil d'actu</div>
+            <svg class="abs" viewBox="0 0 24 24" style="left:314px;top:14px;width:24px;height:24px"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="#111" stroke-width="2"/></svg>
+            <svg class="abs" viewBox="0 0 24 24" style="left:350px;top:14px;width:24px;height:24px"><path d="M21 4L3 11l7 2 2 7z" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div id="d-flash" class="abs"></div>
+        </div>
+        <div class="scr" id="d-home">
+            <img class="abs" src="assets/brand/trouvaille-icon.svg" style="left:17px;top:10px;width:28px;height:28px" alt="" />
+            <div class="abs b" style="left:52px;top:11px;font-size:19px">Trouvaille</div>
+            <div class="abs pill" style="left:268px;top:11px"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 1 0-14 0c0 5 7 12 7 12z" fill="none" stroke="#c8432f" stroke-width="2.4"/><circle cx="12" cy="10" r="2.5" fill="#c8432f"/></svg>Ma position</div>
+            <div class="abs" style="left:0;top:46px;width:390px;height:1px;background:#ececec"></div>
+            <div class="abs b" style="left:17px;top:56px;font-size:21px;letter-spacing:-0.01em">Trouve-le près de toi</div>
+            <div class="abs" style="left:17px;top:88px;width:330px;font-size:11.5px;color:#555;line-height:1.4">Photo ou nom du produit : on te montre les vendeurs, leurs prix et leur WhatsApp.</div>
+            <div class="abs" style="left:17px;top:124px;width:356px;height:32px;border-radius:10px;background:#f0efed;display:flex;align-items:center;gap:8px;padding-left:12px;font-size:12.5px;color:#666"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="#555" stroke-width="2.2"/><path d="M16 16l4 4" stroke="#555" stroke-width="2.2" stroke-linecap="round"/></svg>Rechercher un produit</div>
+            <div id="d-hbtn" class="abs"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="#fff" stroke-width="2.2"/></svg>Prendre une photo</div>
+            <div id="d-hgal" class="abs"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="#a8361f" stroke-width="2.2"/><circle cx="9" cy="9" r="1.6" fill="#a8361f"/><path d="M5 18l5-5 4 4 2-2 3 3" fill="none" stroke="#a8361f" stroke-width="2.2"/></svg>Galerie</div>
+            <div class="abs b" style="left:17px;top:226px;font-size:15px">Comment ça marche</div>
+            <div class="abs" style="left:83px;top:270px;width:229px;height:2px;background:#ececec"></div>
+            <div class="abs step" style="left:66px;top:254px"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="#e45846" stroke-width="2.2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="#e45846" stroke-width="2.2"/></svg></div>
+            <div class="abs step" style="left:180px;top:254px"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l9-9h7v7l-9 9z" fill="none" stroke="#e45846" stroke-width="2.2" stroke-linejoin="round"/><circle cx="15" cy="9" r="1.5" fill="#e45846"/></svg></div>
+            <div class="abs step" style="left:295px;top:254px;background:#e45846"><svg class="ico" viewBox="0 0 24 24"><path d="M5 19l1.5-4A7 7 0 1 1 9 18z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+            <div class="abs stepl" style="left:23px;top:298px">Photographie<span>ou écris le nom</span></div>
+            <div class="abs stepl" style="left:137px;top:298px">Compare<span>les prix près de toi</span></div>
+            <div class="abs stepl" style="left:252px;top:298px">Contacte<span>le vendeur sur WhatsApp</span></div>
+            <div class="abs" style="left:17px;top:344px;width:356px;height:52px;border-radius:12px;background:#fcede8"></div>
+            <div class="abs" style="left:28px;top:354px;width:32px;height:32px;border-radius:8px;background:#e45846"></div>
+            <svg class="abs" viewBox="0 0 24 24" style="left:35px;top:361px;width:18px;height:18px"><path d="M4 10h16v10H4z M3 6l2-3h14l2 3v3H3z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="#fff" stroke-width="2"/></svg>
+            <div class="abs b" style="left:70px;top:353px;font-size:13px">Tu es commerçant ?</div>
+            <div class="abs" style="left:70px;top:371px;font-size:11px;color:#555">Mets tes produits en ligne, c'est gratuit</div>
+          </div>
+          
+        <div class="scr" id="d-pick">
+          <div class="abs b" style="left:16px;top:16px;font-size:16px">Photos récentes</div>
+          <div class="abs" style="left:300px;top:18px;font-size:13px;color:#c8432f;font-weight:700">Annuler</div>
+          <div class="cell" style="left:2px;top:56px"><img src="assets/photos/robe.jpg" style="object-position:50% 25%" alt="" /></div>
+          <div class="cell" style="left:131px;top:56px"><img src="assets/photos/sneakers-bw.jpg" alt="" /></div>
+          <div class="cell" style="left:260px;top:56px"><img src="assets/photos/phone-hand.jpg" alt="" /></div>
+          <div class="cell" style="left:2px;top:185px"><img src="assets/photos/hp-red-man.jpg" alt="" /></div>
+          <div class="cell" style="left:131px;top:185px"><img src="assets/photos/hp-grado.jpg" alt="" /></div>
+          <div class="cell" style="left:260px;top:185px;background:#e7d9cf"></div>
+          <div class="abs" style="left:6px;top:60px;width:20px;height:20px;border-radius:50%;background:#e45846;border:2px solid #fff" id="d-sel"></div>
+        </div>
+        <div class="scr" id="d-view">
+          <div class="pic"><img src="assets/photos/robe.jpg" alt="" /></div>
+          <div id="d-box" class="abs"></div>
+          <div id="d-chip" class="abs"><b></b>Robe longue en wax · verte</div>
+        </div>
+        <div class="scr" id="d-res">
+          <div class="abs b" style="left:14px;top:12px;font-size:18px">‹</div>
+          <div class="abs b" style="left:34px;top:13px;font-size:16px">Résultats</div>
+          <div class="abs pill" style="left:268px;top:11px">Autour de moi</div>
+          <div class="abs" style="left:0;top:46px;width:390px;height:1px;background:#ececec"></div>
+          <div class="abs thumb" style="left:9px;top:50px;width:40px;height:40px"><img src="assets/photos/robe.jpg" style="position:absolute;left:0;top:-6px;width:40px;height:87px" alt="" /></div>
+          <div class="abs b" style="left:57px;top:50px;font-size:15px">Robe longue en wax · verte</div>
+          <div class="abs b" style="left:57px;top:72px;font-size:12px;color:#c8432f">✎ Pas ça ?</div>
+          <div class="abs" style="left:0;top:104px;width:390px;height:1px;background:#ececec"></div>
+          <div class="abs b" style="left:14px;top:113px;font-size:15px">3 offres</div>
+          <div class="abs" style="left:0;top:138px;width:390px;height:1px;background:#ececec"></div>
+          <div class="abs card" id="dc-0" style="top:148px"><div class="abs av">MA</div><div class="abs pr">18 500 F</div><div class="abs pn">Robe longue wax · Verte</div><div class="abs sh">Mode Abidjan</div><div class="abs lo">À 900 m · en boutique</div><div class="abs bt">Contacter sur WhatsApp</div></div>
+          <div class="abs card" id="dc-1" style="top:260px"><div class="abs av">WB</div><div class="abs pr">22 000 F</div><div class="abs pn">Robe longue wax · Verte</div><div class="abs sh">Wax Boutique</div><div class="abs lo">À 1,3 km · en boutique</div><div class="abs bt">Contacter sur WhatsApp</div></div>
+          <div class="abs card" id="dc-2" style="top:372px"><div class="abs av">CT</div><div class="abs pr">24 000 F</div><div class="abs pn">Robe longue wax · Verte</div><div class="abs sh">Couture Treichville</div><div class="abs lo">À 2,1 km · en boutique</div><div class="abs bt">Contacter sur WhatsApp</div></div>
+        </div>
+        <div id="d-shot" class="abs"><img src="assets/photos/robe.jpg" alt="" /></div>
+        <div id="d-finger" class="abs"></div>
+      </div>
+    </div>
+    <div id="d-scrim"></div>
+    <div id="dt1" class="dt clip" data-start="0.15" data-duration="2.5" data-track-index="1"><span class="h"><span class="w">Vue</span> <span class="w">en</span> <span class="w acc">scrollant ?</span></span></div>
+    <div id="dt2" class="dt clip" data-start="2.75" data-duration="1.75" data-track-index="2"><span class="h"><span class="w">Fais</span> <span class="w">une</span> <span class="w acc">capture.</span></span></div>
+    <div id="dt3" class="dt clip" data-start="4.6" data-duration="2.6" data-track-index="3"><span class="h"><span class="w">Trouvaille</span></span><span class="h"><span class="w">la</span> <span class="w acc">retrouve.</span></span></div>
   </div>
   <script>
     (function () {
       var tl = gsap.timeline({ paused: true });
-      gsap.set("#pp0", { x: 560, y: 760 });
-      gsap.set("#pp1", { x: 70, y: 1000 });
-      tl.fromTo("#dr-card", { y: 900, rotation: 8, scale: 0.9 }, { y: 0, rotation: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 0);
-      tl.fromTo("#dr-t1 .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 0.15);
-      // the photo is scanned, then the dress is framed and named
-      tl.fromTo("#dr-scan", { y: 0, opacity: 1 }, { y: 1002, duration: 0.55, ease: "power1.inOut" }, 0.45);
-      tl.to("#dr-scan", { opacity: 0, duration: 0.1 }, 1.0);
-      tl.fromTo("#dr-box", { opacity: 0, scale: 1.2, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, 0.95);
-      tl.fromTo("#dr-chip span", { opacity: 0, y: 14, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 1.15);
-      tl.to("#dr-t1 .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, ease: "power2.in" }, 1.3);
-      tl.fromTo("#dr-t2 .w", { opacity: 0, filter: "blur(10px)", scale: 1.1 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "power4.out" }, 1.55);
-      tl.fromTo("#pp0", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 1.65);
-      tl.fromTo("#pp1", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 1.8);
-      tl.to("#dr-card, #pp0, #pp1, #dr-chip span, #dr-t2 .w", { opacity: 0, y: -60, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 2.75);
+      gsap.set("#d-home, #d-pick, #d-view, #d-res", { opacity: 0 });
+      gsap.set("#dc-0, #dc-1, #dc-2, #d-sel", { opacity: 0 });
+      function words(id, at) { tl.fromTo("#" + id + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, at); }
+      function out(id, at) { tl.to("#" + id + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      function tap(at, sx, sy) {
+        tl.set("#d-finger", { x: sx, y: sy }, at - 0.3);
+        tl.fromTo("#d-finger", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, at - 0.3);
+        tl.to("#d-finger", { scale: 0.78, duration: 0.08, ease: "power2.in" }, at - 0.04);
+        tl.to("#d-finger", { scale: 1, opacity: 0, duration: 0.22, ease: "power2.out" }, at + 0.06);
+      }
+      tl.fromTo("#d-phone", { y: 1400 }, { y: 0, duration: 0.55, ease: "expo.out" }, 0);
+      words("dt1", 0.15);
+      // the thumb scrolls the feed: past the sneakers, stops on the dress
+      tl.set("#d-finger", { x: 230, y: 700 }, 0.55);
+      tl.fromTo("#d-finger", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 0.55);
+      tl.to("#d-finger", { y: 260, duration: 0.5, ease: "power2.in" }, 0.7);
+      tl.to("#d-finger", { opacity: 0, duration: 0.15 }, 1.15);
+      tl.fromTo("#d-feed", { y: 0 }, { y: -688, duration: 1.3, ease: "power3.out" }, 0.7);
+      // screenshot
+      out("dt1", 2.5);
+      words("dt2", 2.75);
+      tl.fromTo("#d-flash", { opacity: 0 }, { opacity: 0.95, duration: 0.05 }, 2.85);
+      tl.to("#d-flash", { opacity: 0, duration: 0.25, ease: "power2.out" }, 2.95);
+      tl.fromTo("#d-shot", { opacity: 0, scale: 3.6, x: 140, y: -320, transformOrigin: "0% 100%" }, { opacity: 1, scale: 1, x: 0, y: 0, duration: 0.5, ease: "power3.inOut" }, 2.95);
+      // into Trouvaille: Galerie → pick the screenshot
+      tl.to("#d-shot", { opacity: 0, duration: 0.15 }, 3.75);
+      tl.set("#d-home", { opacity: 1 }, 3.75);
+      tl.fromTo("#d-home", { x: 390 }, { x: 0, duration: 0.35, ease: "power3.out" }, 3.75);
+      tap(4.3, 307, 178);
+      out("dt2", 4.35);
+      tl.set("#d-pick", { opacity: 1 }, 4.4);
+      tl.fromTo("#d-pick", { y: 844 }, { y: 0, duration: 0.3, ease: "power3.out" }, 4.4);
+      words("dt3", 4.6);
+      tap(4.95, 66, 120);
+      tl.fromTo("#d-sel", { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)" }, 4.95);
+      // recognition
+      tl.set("#d-view", { opacity: 1 }, 5.15);
+      tl.fromTo("#d-view .pic img", { scale: 0.44, x: -100, y: -260, transformOrigin: "0% 0%" }, { scale: 1, x: 0, y: 0, duration: 0.35, ease: "power3.out" }, 5.15);
+      tl.fromTo("#d-box", { opacity: 0, scale: 1.25, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, 5.45);
+      tl.fromTo("#d-chip", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 5.6);
+      // results near you
+      tl.set("#d-res", { opacity: 1 }, 6.05);
+      tl.fromTo("#d-res", { x: 390 }, { x: 0, duration: 0.3, ease: "power3.out" }, 6.05);
+      ["#dc-0", "#dc-1", "#dc-2"].forEach(function (c, i) { tl.fromTo(c, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 6.25 + i * 0.12); });
+      out("dt3", 7.0);
+      tl.to("#d-phone", { y: -80, opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 7.0);
       window.__timelines = window.__timelines || {};
       window.__timelines["dress"] = tl;
     })();
