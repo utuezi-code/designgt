@@ -19,3 +19,9 @@ trouvaille-v2/.hyperframes/preview/
 trouvaille-v2/.hyperframes/*-lock/
 trouvaille-v2/.media/
 trouvaille/capture-site/
+trouvaille-v3/renders/work-*/
+trouvaille-v3/renders/.*
+trouvaille-v3/.hyperframes/artifacts/
+trouvaille-v3/.hyperframes/preview/
+trouvaille-v3/.hyperframes/*-lock/
+trouvaille-v3/.media/

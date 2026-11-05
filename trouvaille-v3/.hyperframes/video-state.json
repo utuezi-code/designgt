@@ -1,0 +1,504 @@
+{
+  "version": 1,
+  "historyId": "05c03769-3882-4086-9710-dfb0117d444e",
+  "currentRevision": "8bd3f7ef-b186-4758-acf2-7f0f4bf01be3",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "CLAUDE.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "assets/brand/trouvaille-icon.svg": {
+      "hash": "f9807dda267dff167f0a8bb34e6d84fb0ff3253cfb91eaf28f3b3a2799c280df",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/f9/f9807dda267dff167f0a8bb34e6d84fb0ff3253cfb91eaf28f3b3a2799c280df"
+    },
+    "assets/map/abidjan-end.jpg": {
+      "hash": "ed04ac92edd16977a622618c80dd1c9a5342acc6ce713733b1b8993ec885176e",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/ed/ed04ac92edd16977a622618c80dd1c9a5342acc6ce713733b1b8993ec885176e"
+    },
+    "assets/photos/hp-grado.jpg": {
+      "hash": "3c6b4520b6cc48cdbb66f51b42bb806fb28ef44af2f23ca0eb5d70749f62641d",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/3c/3c6b4520b6cc48cdbb66f51b42bb806fb28ef44af2f23ca0eb5d70749f62641d"
+    },
+    "assets/photos/hp-red-man.jpg": {
+      "hash": "e3d8e40352779f58a82021a3ec6a5986f0c3a3336714e7f9825a0746bbb4ed9a",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/e3/e3d8e40352779f58a82021a3ec6a5986f0c3a3336714e7f9825a0746bbb4ed9a"
+    },
+    "assets/photos/phone-hand.jpg": {
+      "hash": "22b011c88e91c01ff68d129dbfb8184e6efd2cec863bddf0adbc9d70eefe6ccb",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/22/22b011c88e91c01ff68d129dbfb8184e6efd2cec863bddf0adbc9d70eefe6ccb"
+    },
+    "assets/photos/sneakers-bw.jpg": {
+      "hash": "b5b2801f746ed3d45b0458a75c760f5cce1a2e6f2538c0ebcde7d01287aaf071",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/b5/b5b2801f746ed3d45b0458a75c760f5cce1a2e6f2538c0ebcde7d01287aaf071"
+    },
+    "assets/sfx/impact.mp3": {
+      "hash": "1c105912efe3b185d97ee753d3f056296b7d8da0aef8c20fbcb44f2f9155ee1e",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/1c/1c105912efe3b185d97ee753d3f056296b7d8da0aef8c20fbcb44f2f9155ee1e"
+    },
+    "assets/sfx/message.mp3": {
+      "hash": "660c17b1f0b85b94971d3bf52e2e3da04e47a59fa1b14f4f10e4643b8c302152",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/66/660c17b1f0b85b94971d3bf52e2e3da04e47a59fa1b14f4f10e4643b8c302152"
+    },
+    "assets/sfx/pop.mp3": {
+      "hash": "d1a769161084b3f8cee384c7490802224c9f594b666cebbcc1e2c99b22addbce",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/d1/d1a769161084b3f8cee384c7490802224c9f594b666cebbcc1e2c99b22addbce"
+    },
+    "assets/sfx/riser.mp3": {
+      "hash": "c512a725e9c866277b3fa0f8e7f8f311d5cca619bb0fac2e3620958f2a8b7e49",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/c5/c512a725e9c866277b3fa0f8e7f8f311d5cca619bb0fac2e3620958f2a8b7e49"
+    },
+    "assets/sfx/shutter.mp3": {
+      "hash": "b5c29f81b6daedb089273859ce88575549154cbe33fb13d37c12795364f95a5f",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/b5/b5c29f81b6daedb089273859ce88575549154cbe33fb13d37c12795364f95a5f"
+    },
+    "assets/sfx/tap.mp3": {
+      "hash": "935eacff4e0011927efb57975b609e8c14893ce11a2c5505aab0289e289fc390",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/93/935eacff4e0011927efb57975b609e8c14893ce11a2c5505aab0289e289fc390"
+    },
+    "assets/sfx/whoosh-a.mp3": {
+      "hash": "8e4dccf0697f7faff1104e58a1b38ebdd692f26294e3a53649e73e4cf7e9801f",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/8e/8e4dccf0697f7faff1104e58a1b38ebdd692f26294e3a53649e73e4cf7e9801f"
+    },
+    "assets/sfx/whoosh-b.mp3": {
+      "hash": "f3886e500cab8350dca4d35cf580a26659af9bda2b764879d8d03c521476ac09",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/f3/f3886e500cab8350dca4d35cf580a26659af9bda2b764879d8d03c521476ac09"
+    },
+    "compositions/app.html": {
+      "hash": "22d8442b991599cd2d52676f93744decaa52934b0751060dbfc0984c1110aa83",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/22/22d8442b991599cd2d52676f93744decaa52934b0751060dbfc0984c1110aa83"
+    },
+    "compositions/brand.html": {
+      "hash": "22bdbce5520317d56684228f331bcd1f530ace1fd29e84456ee94fd7d92aa769",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/22/22bdbce5520317d56684228f331bcd1f530ace1fd29e84456ee94fd7d92aa769"
+    },
+    "compositions/dress.html": {
+      "hash": "b072b4668079fed3398397fe1b8e1fc48857f4add85d995f11828ac900909b1d",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/b0/b072b4668079fed3398397fe1b8e1fc48857f4add85d995f11828ac900909b1d"
+    },
+    "compositions/endcard.html": {
+      "hash": "4defda1a52c85c1ad524613b6806f877705bc3e0ed48634ff48732dd39792de4",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/4d/4defda1a52c85c1ad524613b6806f877705bc3e0ed48634ff48732dd39792de4"
+    },
+    "compositions/hook.html": {
+      "hash": "8d32cc93390e23ede0eea8ca6999717d403e10d6763b47f315d07fd9cc48acd0",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/8d/8d32cc93390e23ede0eea8ca6999717d403e10d6763b47f315d07fd9cc48acd0"
+    },
+    "compositions/payoff.html": {
+      "hash": "bdb1a37a64633f84294396d5e77dca8e9023e5d2da9bf763d0a25d6ded376cc0",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/bd/bdb1a37a64633f84294396d5e77dca8e9023e5d2da9bf763d0a25d6ded376cc0"
+    },
+    "hyperframes.json": {
+      "hash": "35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
+    },
+    "hyperframes.lock.json": {
+      "hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/ca/ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    "index.html": {
+      "hash": "01c05843e613885eb75c8a060d98eef9de926a264778f35aefed2a4890917ccd",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/01/01c05843e613885eb75c8a060d98eef9de926a264778f35aefed2a4890917ccd"
+    },
+    "meta.json": {
+      "hash": "e9d38bb5d3e7739d6f6429d49312b30761c15244c6e30cd2c41befa00994be50",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/e9/e9d38bb5d3e7739d6f6429d49312b30761c15244c6e30cd2c41befa00994be50"
+    },
+    "package.json": {
+      "hash": "404d18ba290e60de7827cd6da9775812d2d2289e393ed848979d43168ecd0322",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/40/404d18ba290e60de7827cd6da9775812d2d2289e393ed848979d43168ecd0322"
+    },
+    "assets/audio/ludo-afro-reggae.mp3": {
+      "hash": "3b99fb855d3f582a1d33a8d8c4d270e1ceff93adc3a1f0144c98463316cdd0a6",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/3b/3b99fb855d3f582a1d33a8d8c4d270e1ceff93adc3a1f0144c98463316cdd0a6"
+    },
+    "assets/map/abidjan.mp4": {
+      "hash": "35889b8caad8ef3b46ab80614b74e520f077400bcc408eb26e1ae94467e2e3c0",
+      "content": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/35/35889b8caad8ef3b46ab80614b74e520f077400bcc408eb26e1ae94467e2e3c0"
+    }
+  },
+  "revisions": {
+    "8bd3f7ef-b186-4758-acf2-7f0f4bf01be3": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793904168770,
+      "endedAt": 1793904168775,
+      "files": {
+        "compositions/app.html": {
+          "before": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/af/af615d90b07a7ef829dd1e5b8934a9bf5a562393afcfb205a89211db6e9ab684",
+          "after": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/22/22d8442b991599cd2d52676f93744decaa52934b0751060dbfc0984c1110aa83"
+        },
+        "compositions/hook.html": {
+          "before": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/44/44639ed6a89e8de10e0f350f6eee136e74d76c0fa7e7fed5443dfdbd2981c00e",
+          "after": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/8d/8d32cc93390e23ede0eea8ca6999717d403e10d6763b47f315d07fd9cc48acd0"
+        },
+        "compositions/payoff.html": {
+          "before": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/e6/e6b368604d8cfc3954f6e4ec4b74fb9873dbb948dd232f379021b948c211dda9",
+          "after": "/root/.cache/hyperframes/history/05c03769-3882-4086-9710-dfb0117d444e/blobs/bd/bdb1a37a64633f84294396d5e77dca8e9023e5d2da9bf763d0a25d6ded376cc0"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "8bd3f7ef-b186-4758-acf2-7f0f4bf01be3",
+      "id": "47c18ac3-c9f2-4d91-95e2-17b211e2a050"
+    },
+    "revisions": {
+      "8bd3f7ef-b186-4758-acf2-7f0f4bf01be3": [
+        {
+          "id": "47c18ac3-c9f2-4d91-95e2-17b211e2a050",
+          "scope": "project",
+          "report": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/checks/47c18ac3-c9f2-4d91-95e2-17b211e2a050.json",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793904178086,
+          "contentHash": "393490433083415235cd42ce1eeb49a6fb51860d43e9d3c4881544df7b1c4920",
+          "revision": "8bd3f7ef-b186-4758-acf2-7f0f4bf01be3",
+          "inputFingerprint": "d5d76bb8ee1f42d44cd5d99ffee184392061df827d7625622a8eee43e4027e52",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-13"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-0",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-00-at-0.5s.png",
+        "time": 0.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "2b22d18bc4ba74c71e7b3a1314bc0ee2d10f293a537e06f8d034bdb7b9eca65f",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-1",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-01-at-4.6s.png",
+        "time": 4.6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "79866358f10c085d4b5ff3b56fceb729ebdaab57564f816bcf5d8f3dc45237aa",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-2",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-02-at-6.6s.png",
+        "time": 6.6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "6fdddd78e19b313a4ba7b5446112004ace0e176b5406daa6438dd45f306e4f96",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-3",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-03-at-9s.png",
+        "time": 9,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "62cb845168b7bc26970fe9b86388177f3effcd5f463b9c04c39e2adb0530ecf3",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-4",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-04-at-11.3s.png",
+        "time": 11.3,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "e0458a7be82a748f60ccf6c629af0f52680960f608a6c3b0297e7f36ce50ccff",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-5",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-05-at-13.6s.png",
+        "time": 13.6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "0b81b97cb6d4803b100decdb3f02218d3b58a959fd0c4f7f1de5f3282d4fc5db",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-6",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-06-at-16.2s.png",
+        "time": 16.2,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "eccc84e95e2f2222738a780bdd0535bf561f629f3d05539b1b18e7247c39e509",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-7",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-07-at-17.9s.png",
+        "time": 17.9,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "d310adad5bfa81f04cd25ea74e6e3214a4a8f4edf98105467521433d847b2950",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-8",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-08-at-20.4s.png",
+        "time": 20.4,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "e12efeb4e656cc5eaa3710f34e644a4cf957987e3fe3ab9e448ca19701609bc1",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-9",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-09-at-21.8s.png",
+        "time": 21.8,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "0b1b8cf93f6f60598a97b4ac8cc0552b740c213133ef399e5f3bddc7094336f2",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-10",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-10-at-23.3s.png",
+        "time": 23.3,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "ab2436ca07db9d5616fade12165009f5f4023afa662b812ecb1acb8e5f4107f7",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-11",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-11-at-25.6s.png",
+        "time": 25.6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "c6cfb0003f146d89c4cc747ae3fa9c1958ba00d878fdb541472b4af34231e7f2",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-12",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-12-at-29.5s.png",
+        "time": 29.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "5776908054802817b4123f83183fd5a1f269d0db530f563ed03910e31df166a7",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6f56ca14-bdb1-42eb-956f-93cc8ae6bf2e-13",
+        "image": "/home/user/designgt/trouvaille-v3/.hyperframes/artifacts/snapshots/3266cbb4-d00d-4762-8d05-a2137f897c61/frame-13-at-30.75s.png",
+        "time": 30.75,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [
+            "1 image(s) failed to load at 25.6s, so the frame may be missing them: http://127.0.0.1:39759/assets/photos/robe.jpg"
+          ],
+          "partial": true
+        },
+        "createdAt": 1793904145895,
+        "contentHash": "5776908054802817b4123f83183fd5a1f269d0db530f563ed03910e31df166a7",
+        "revision": null,
+        "inputFingerprint": "b21d046da1cb9d4e761f228a26ca685dd604ed3b5fd3f87aec46279b5eed45d0",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}

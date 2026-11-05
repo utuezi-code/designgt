@@ -1,0 +1,46 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e45846; font-family: "Poppins", sans-serif; }
+    #dr-card { position: absolute; left: 160px; top: 330px; width: 760px; height: 1010px; border-radius: 40px; overflow: hidden; background: #f3e7da; box-shadow: 0 40px 80px rgba(110, 25, 10, 0.35); }
+    #dr-card img { position: absolute; left: 0; top: 0; width: 760px; height: 1010px; object-fit: cover; }
+    #dr-scan { position: absolute; left: 0; top: 0; width: 760px; height: 8px; background: #ffffff; box-shadow: 0 0 0 1px rgba(255,255,255,0.4); }
+    #dr-box { position: absolute; left: 227px; top: 148px; width: 358px; height: 830px; border: 6px solid #ffffff; border-radius: 34px; box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.25); }
+    #dr-chip { position: absolute; left: 0; width: 1080px; top: 380px; text-align: center; }
+    #dr-chip span { display: inline-flex; align-items: center; gap: 14px; padding: 14px 30px; border-radius: 999px; background: #fff; color: #1b1b1b; font-weight: 700; font-size: 36px; box-shadow: 0 10px 24px rgba(0,0,0,0.2); }
+    #dr-chip b { width: 16px; height: 16px; border-radius: 50%; background: #e45846; display: inline-block; }
+    .tx { position: absolute; left: 0; width: 1080px; top: 170px; text-align: center; color: #fff; font-weight: 700; font-size: 104px; letter-spacing: -0.03em; white-space: nowrap; }
+    .w { display: inline-block; opacity: 0; }
+    .pp { position: absolute; left: 0; top: 0; padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 42px; white-space: nowrap; box-shadow: 0 12px 26px rgba(80,20,10,0.3); opacity: 0; }
+    #pp0 { background: #1b1b1b; color: #fff; }
+    #pp1 { background: #ffffff; color: #c8432f; }
+  </style>
+  <div id="root" data-composition-id="dress" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="dr-card"><img src="assets/photos/robe.jpg" alt="Robe longue en wax verte" /><div id="dr-scan"></div><div id="dr-box"></div></div>
+    <div id="dr-chip" class="clip" data-start="1.15" data-duration="1.75" data-track-index="3"><span><b></b>Robe longue en wax · verte</span></div>
+    <div id="dr-t1" class="tx clip" data-start="0.15" data-duration="1.3" data-track-index="1"><span class="w">Une</span> <span class="w">robe</span> <span class="w">aussi ?</span></div>
+    <div id="dr-t2" class="tx clip" data-start="1.55" data-duration="1.4" data-track-index="2"><span class="w">Trouvée.</span></div>
+    <div id="pp0" class="pp">18 500 F · 900 m</div>
+    <div id="pp1" class="pp">22 000 F · 1,3 km</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      gsap.set("#pp0", { x: 470, y: 900 });
+      gsap.set("#pp1", { x: 110, y: 1060 });
+      tl.fromTo("#dr-card", { y: 900, rotation: 8, scale: 0.9 }, { y: 0, rotation: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 0);
+      tl.fromTo("#dr-t1 .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 0.15);
+      // the photo is scanned, then the dress is framed and named
+      tl.fromTo("#dr-scan", { y: 0, opacity: 1 }, { y: 1002, duration: 0.55, ease: "power1.inOut" }, 0.45);
+      tl.to("#dr-scan", { opacity: 0, duration: 0.1 }, 1.0);
+      tl.fromTo("#dr-box", { opacity: 0, scale: 1.2, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, 0.95);
+      tl.fromTo("#dr-chip span", { opacity: 0, y: 14, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 1.15);
+      tl.to("#dr-t1 .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, ease: "power2.in" }, 1.3);
+      tl.fromTo("#dr-t2 .w", { opacity: 0, filter: "blur(10px)", scale: 1.1 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "power4.out" }, 1.55);
+      tl.fromTo("#pp0", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 1.65);
+      tl.fromTo("#pp1", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 1.8);
+      tl.to("#dr-card, #pp0, #pp1, #dr-chip span, #dr-t2 .w", { opacity: 0, y: -60, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 2.75);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["dress"] = tl;
+    })();
+  </script>
+</template>
