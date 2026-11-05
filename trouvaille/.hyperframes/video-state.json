@@ -674,5 +674,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "aa16a1af-3d67-4723-8746-3dcdd1b22429",
+      "completedAt": 1793901742547,
+      "output": "/home/user/designgt/trouvaille/renders/trouvaille-motion.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
