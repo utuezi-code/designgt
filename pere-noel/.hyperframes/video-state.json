@@ -1685,5 +1685,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "aa364d42-d088-4b8d-a621-046481a6430a",
+      "completedAt": 1793898106920,
+      "output": "/home/user/designgt/pere-noel/renders/pere-noel-cie.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
