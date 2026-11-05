@@ -1,0 +1,70 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; font-family: "Poppins", sans-serif; }
+    .tb { position: absolute; left: 0; top: 0; width: 1080px; height: 620px; }
+    .scrim { position: absolute; inset: 0; opacity: 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(255, 255, 255, 0) 100%); }
+    .scrim.blush { background: linear-gradient(180deg, rgba(252, 237, 232, 0.96) 0%, rgba(252, 237, 232, 0.9) 55%, rgba(252, 237, 232, 0) 100%); }
+    .tx { position: absolute; left: 90px; top: 196px; color: #1b1b1b; white-space: nowrap; }
+    .h { display: block; font-weight: 700; font-size: 116px; line-height: 1.04; letter-spacing: -0.025em; }
+    .h.m { font-size: 96px; }
+    .s { display: block; margin-top: 10px; font-weight: 500; font-size: 46px; color: #5b5b5b; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    #t-brand .tx { left: 0; width: 1080px; top: 206px; text-align: center; }
+    #t-brand .h { display: inline-flex; align-items: center; gap: 26px; }
+    #t-brand img { width: 120px; height: 120px; border-radius: 28px; }
+  </style>
+  <div id="root" data-composition-id="titles" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="t-seen" class="tb clip" data-start="0" data-duration="2.3" data-track-index="0">
+      <div class="scrim blush"></div>
+      <div class="tx"><span class="h"><span class="w">Tu</span> <span class="w">l'as</span> <span class="w acc">vu.</span></span></div>
+    </div>
+    <div id="t-where" class="tb clip" data-start="2.45" data-duration="2.15" data-track-index="1">
+      <div class="scrim blush"></div>
+      <div class="tx"><span class="h m"><span class="w">Mais</span> <span class="w">où</span> <span class="w">l'acheter,</span></span><span class="h m"><span class="w">près</span> <span class="w">de</span> <span class="w">chez</span> <span class="w acc">toi ?</span></span></div>
+    </div>
+    <div id="t-brand" class="tb clip" data-start="5.1" data-duration="1.65" data-track-index="2">
+      <div class="scrim blush"></div>
+      <div class="tx"><span class="h"><img class="w" src="assets/brand/trouvaille-icon.svg" alt="" /><span class="w">Trouvaille</span></span></div>
+    </div>
+    <div id="t-photo" class="tb clip" data-start="6.85" data-duration="2.65" data-track-index="3">
+      <div class="scrim"></div>
+      <div class="tx"><span class="h"><span class="w">Photographie.</span></span><span class="s"><span class="w">ou</span> <span class="w">écris</span> <span class="w">le</span> <span class="w">nom</span></span></div>
+    </div>
+    <div id="t-seen2" class="tb clip" data-start="9.65" data-duration="2.05" data-track-index="4">
+      <div class="scrim"></div>
+      <div class="tx"><span class="h"><span class="w acc">Reconnu</span></span><span class="s"><span class="w">par</span> <span class="w">l'image</span></span></div>
+    </div>
+    <div id="t-compare" class="tb clip" data-start="11.85" data-duration="3.95" data-track-index="5">
+      <div class="scrim"></div>
+      <div class="tx"><span class="h"><span class="w">Compare.</span></span><span class="s"><span class="w">les</span> <span class="w">prix</span> <span class="w">près</span> <span class="w">de</span> <span class="w acc">toi</span></span></div>
+    </div>
+    <div id="t-contact" class="tb clip" data-start="16.0" data-duration="3.3" data-track-index="6">
+      <div class="scrim"></div>
+      <div class="tx"><span class="h"><span class="w">Contacte.</span></span><span class="s"><span class="w">le</span> <span class="w">vendeur</span> <span class="w">sur</span> <span class="w acc">WhatsApp</span></span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function block(id, start, dur, parts) {
+        var r = document.getElementById(id);
+        tl.fromTo(r.querySelector(".scrim"), { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, start);
+        parts.forEach(function (p) {
+          tl.fromTo(r.querySelectorAll(p[0]), { opacity: 0, filter: "blur(10px)", y: 0 }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: p[2] || 0.07, ease: "power4.out" }, start + p[1]);
+        });
+        tl.to(r.querySelectorAll(".w"), { opacity: 0, filter: "blur(10px)", duration: 0.16, stagger: 0.015, ease: "power2.in" }, start + dur - 0.26);
+        tl.to(r.querySelector(".scrim"), { opacity: 0, duration: 0.22, ease: "power2.in" }, start + dur - 0.24);
+      }
+      block("t-seen", 0, 2.3, [[".w", 0.05, 0.16]]);
+      block("t-where", 2.45, 2.15, [[".h:first-child .w", 0.0, 0.08], [".h:last-child .w", 0.4, 0.08]]);
+      block("t-brand", 5.1, 1.65, [[".w", 0.05, 0.12]]);
+      block("t-photo", 6.85, 2.65, [[".h .w", 0.0], [".s .w", 0.3, 0.06]]);
+      block("t-seen2", 9.65, 2.05, [[".h .w", 0.0], [".s .w", 0.2, 0.08]]);
+      block("t-compare", 11.85, 3.95, [[".h .w", 0.0], [".s .w", 0.3, 0.06]]);
+      block("t-contact", 16.0, 3.3, [[".h .w", 0.0], [".s .w", 0.3, 0.06]]);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["titles"] = tl;
+    })();
+  </script>
+</template>

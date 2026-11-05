@@ -6,3 +6,9 @@ vitib/film/.hyperframes/artifacts/
 vitib/film/.hyperframes/preview/
 vitib/film/.hyperframes/*-lock/
 vitib/film/.media/
+trouvaille/renders/work-*/
+trouvaille/renders/.*
+trouvaille/.hyperframes/artifacts/
+trouvaille/.hyperframes/preview/
+trouvaille/.hyperframes/*-lock/
+trouvaille/.media/

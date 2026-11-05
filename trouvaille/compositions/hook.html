@@ -1,0 +1,54 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #fcede8; }
+    #hk-map { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+    #hk-hp { position: absolute; left: 140px; top: 520px; width: 800px; height: 800px; }
+    #hk-shadow { position: absolute; left: 290px; top: 1250px; width: 500px; height: 70px; border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(120, 50, 35, 0.25) 0%, rgba(120, 50, 35, 0) 70%); }
+    #hk-you { position: absolute; left: 500px; top: 1000px; width: 80px; height: 80px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <svg id="hk-map" viewBox="0 0 1080 1920"></svg>
+    <div id="hk-shadow"></div>
+    <svg id="hk-hp" viewBox="0 0 400 400"><g class="hp">
+  <path d="M84 238 C84 82 316 82 316 238" fill="none" stroke="#2a2a2a" stroke-width="30" stroke-linecap="round"/>
+  <path d="M104 236 C104 112 296 112 296 236" fill="none" stroke="#e45846" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <rect x="40" y="204" width="92" height="138" rx="40" fill="#e45846"/>
+  <rect x="58" y="218" width="18" height="70" rx="9" fill="#ffffff" opacity="0.35"/>
+  <rect x="110" y="220" width="36" height="106" rx="17" fill="#2a2a2a"/>
+  <rect x="268" y="204" width="92" height="138" rx="40" fill="#e45846"/>
+  <rect x="286" y="218" width="18" height="70" rx="9" fill="#ffffff" opacity="0.35"/>
+  <rect x="254" y="220" width="36" height="106" rx="17" fill="#2a2a2a"/>
+</g></svg>
+    <svg id="hk-you" viewBox="0 0 80 80"><circle cx="40" cy="40" r="30" fill="#ffffff"/><circle cx="40" cy="40" r="20" fill="#1b1b1b"/></svg>
+  </div>
+  <script src="assets/map.js"></script>
+  <script>
+    (function () {
+      var map = window.TrouvailleMap.build(document.getElementById("hk-map"), "hk");
+      var tl = gsap.timeline({ paused: true });
+      // the object: swings in, settles
+      tl.fromTo("#hk-hp", { rotation: -14, y: -60, scale: 0.92, transformOrigin: "50% 30%" }, { rotation: 0, y: 0, scale: 1, duration: 1.0, ease: "elastic.out(1, 0.55)" }, 0);
+      tl.fromTo("#hk-shadow", { opacity: 0.4, scaleX: 0.8 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.out" }, 0);
+      // it shrinks into a thought above "you" on the map
+      tl.to("#hk-hp", { x: 0, y: -230, scale: 0.34, duration: 0.7, ease: "power3.inOut" }, 2.3);
+      tl.to("#hk-shadow", { opacity: 0, duration: 0.3 }, 2.3);
+      tl.fromTo("#hk-map", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 2.4);
+      map.streets.forEach(function (p, i) {
+        var len = p.getTotalLength();
+        tl.fromTo(p, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, 2.4 + i * 0.03);
+      });
+      tl.fromTo("#hk-you", { opacity: 0, scale: 0.3, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 2.75);
+      map.others.concat(map.shops).forEach(function (p, i) {
+        tl.fromTo(p.inner, { scale: 0, opacity: 0, transformOrigin: "50% 100%" }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 3.0 + i * 0.07);
+      });
+      // every shop stays grey: nobody knows who has it
+      map.shops.forEach(function (p) {
+        p.inner.querySelectorAll("path")[0].setAttribute("fill", "#c9b8b2");
+        p.inner.querySelectorAll("path")[1].setAttribute("stroke", "#c9b8b2");
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>
