@@ -1,0 +1,29 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #e45846; font-family: "Poppins", sans-serif; }
+    #po-card { position: absolute; left: 309px; top: 520px; width: 462px; height: 1010px; border-radius: 40px; overflow: hidden; box-shadow: 0 40px 80px rgba(110, 25, 10, 0.35); }
+    #po-card img { position: absolute; left: 0; top: 0; width: 462px; height: 1010px; object-fit: cover; }
+    #po-tx { position: absolute; left: 0; width: 1080px; top: 200px; text-align: center; color: #fff; }
+    #po-tx .h { display: block; font-weight: 700; font-size: 140px; letter-spacing: -0.03em; line-height: 1; }
+    #po-tx .s { display: block; margin-top: 18px; font-weight: 600; font-size: 52px; }
+    .w { display: inline-block; opacity: 0; }
+    #po-tag { position: absolute; left: 0; width: 1080px; top: 1180px; text-align: center; }
+    #po-tag span { display: inline-block; padding: 14px 32px; border-radius: 999px; background: #1b1b1b; color: #fff; font-weight: 700; font-size: 42px; box-shadow: 0 12px 26px rgba(80,20,10,0.3); }
+  </style>
+  <div id="root" data-composition-id="payoff" data-width="1080" data-height="1920">
+    <div id="po-card"><img src="assets/photos/robe.jpg" alt="La robe en wax verte" /></div>
+    <div id="po-tx" class="clip" data-start="0.3" data-duration="2.45" data-track-index="1"><span class="h"><span class="w">Trouvée.</span></span><span class="s"><span class="w">À</span> <span class="w">650 m</span> <span class="w">de</span> <span class="w">chez</span> <span class="w">toi.</span></span></div>
+    <div id="po-tag" class="clip" data-start="0.9" data-duration="1.85" data-track-index="2"><span>18 500 F · Mode Abidjan</span></div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo("#po-card", { y: 700, rotation: -6, scale: 0.9 }, { y: 0, rotation: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 0);
+      tl.fromTo("#po-tx .h .w", { opacity: 0, filter: "blur(12px)", scale: 1.1 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "power4.out" }, 0.3);
+      tl.fromTo("#po-tx .s .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.06, ease: "power4.out" }, 0.55);
+      tl.fromTo("#po-tag span", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 0.9);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["payoff"] = tl;
+    })();
+  </script>
+</template>

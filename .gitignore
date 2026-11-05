@@ -25,3 +25,9 @@ trouvaille-v3/.hyperframes/artifacts/
 trouvaille-v3/.hyperframes/preview/
 trouvaille-v3/.hyperframes/*-lock/
 trouvaille-v3/.media/
+trouvaille-robe/renders/work-*/
+trouvaille-robe/renders/.*
+trouvaille-robe/.hyperframes/artifacts/
+trouvaille-robe/.hyperframes/preview/
+trouvaille-robe/.hyperframes/*-lock/
+trouvaille-robe/.media/

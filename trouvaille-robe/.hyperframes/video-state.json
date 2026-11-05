@@ -1,0 +1,800 @@
+{
+  "version": 1,
+  "historyId": "02e88f8e-2c4f-4094-8386-c328a6a6ffea",
+  "currentRevision": "ce4248d3-5efc-47c1-9c3b-53f86c722a22",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "CLAUDE.md": {
+      "hash": "1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/1a/1a68041fc901ff835682a2a8d6f63c96dbb0b9eef8fb0971e97a79eaf69303d3"
+    },
+    "assets/brand/trouvaille-icon.svg": {
+      "hash": "f9807dda267dff167f0a8bb34e6d84fb0ff3253cfb91eaf28f3b3a2799c280df",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/f9/f9807dda267dff167f0a8bb34e6d84fb0ff3253cfb91eaf28f3b3a2799c280df"
+    },
+    "assets/map/abidjan-end.jpg": {
+      "hash": "ed04ac92edd16977a622618c80dd1c9a5342acc6ce713733b1b8993ec885176e",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/ed/ed04ac92edd16977a622618c80dd1c9a5342acc6ce713733b1b8993ec885176e"
+    },
+    "assets/photos/hp-grado.jpg": {
+      "hash": "3c6b4520b6cc48cdbb66f51b42bb806fb28ef44af2f23ca0eb5d70749f62641d",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/3c/3c6b4520b6cc48cdbb66f51b42bb806fb28ef44af2f23ca0eb5d70749f62641d"
+    },
+    "assets/photos/hp-red-man.jpg": {
+      "hash": "e3d8e40352779f58a82021a3ec6a5986f0c3a3336714e7f9825a0746bbb4ed9a",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/e3/e3d8e40352779f58a82021a3ec6a5986f0c3a3336714e7f9825a0746bbb4ed9a"
+    },
+    "assets/photos/phone-hand.jpg": {
+      "hash": "22b011c88e91c01ff68d129dbfb8184e6efd2cec863bddf0adbc9d70eefe6ccb",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/22/22b011c88e91c01ff68d129dbfb8184e6efd2cec863bddf0adbc9d70eefe6ccb"
+    },
+    "assets/photos/robe.jpg": {
+      "hash": "1727fdde25ae249457d42dc778aa1d914e80196324f8b254e84f2c5026ee070c",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/17/1727fdde25ae249457d42dc778aa1d914e80196324f8b254e84f2c5026ee070c"
+    },
+    "assets/photos/sneakers-bw.jpg": {
+      "hash": "b5b2801f746ed3d45b0458a75c760f5cce1a2e6f2538c0ebcde7d01287aaf071",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/b5/b5b2801f746ed3d45b0458a75c760f5cce1a2e6f2538c0ebcde7d01287aaf071"
+    },
+    "assets/sfx/impact.mp3": {
+      "hash": "1c105912efe3b185d97ee753d3f056296b7d8da0aef8c20fbcb44f2f9155ee1e",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/1c/1c105912efe3b185d97ee753d3f056296b7d8da0aef8c20fbcb44f2f9155ee1e"
+    },
+    "assets/sfx/message.mp3": {
+      "hash": "660c17b1f0b85b94971d3bf52e2e3da04e47a59fa1b14f4f10e4643b8c302152",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/66/660c17b1f0b85b94971d3bf52e2e3da04e47a59fa1b14f4f10e4643b8c302152"
+    },
+    "assets/sfx/pop.mp3": {
+      "hash": "d1a769161084b3f8cee384c7490802224c9f594b666cebbcc1e2c99b22addbce",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/d1/d1a769161084b3f8cee384c7490802224c9f594b666cebbcc1e2c99b22addbce"
+    },
+    "assets/sfx/riser.mp3": {
+      "hash": "c512a725e9c866277b3fa0f8e7f8f311d5cca619bb0fac2e3620958f2a8b7e49",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/c5/c512a725e9c866277b3fa0f8e7f8f311d5cca619bb0fac2e3620958f2a8b7e49"
+    },
+    "assets/sfx/shutter.mp3": {
+      "hash": "b5c29f81b6daedb089273859ce88575549154cbe33fb13d37c12795364f95a5f",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/b5/b5c29f81b6daedb089273859ce88575549154cbe33fb13d37c12795364f95a5f"
+    },
+    "assets/sfx/tap.mp3": {
+      "hash": "935eacff4e0011927efb57975b609e8c14893ce11a2c5505aab0289e289fc390",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/93/935eacff4e0011927efb57975b609e8c14893ce11a2c5505aab0289e289fc390"
+    },
+    "assets/sfx/whoosh-a.mp3": {
+      "hash": "8e4dccf0697f7faff1104e58a1b38ebdd692f26294e3a53649e73e4cf7e9801f",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/8e/8e4dccf0697f7faff1104e58a1b38ebdd692f26294e3a53649e73e4cf7e9801f"
+    },
+    "assets/sfx/whoosh-b.mp3": {
+      "hash": "f3886e500cab8350dca4d35cf580a26659af9bda2b764879d8d03c521476ac09",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/f3/f3886e500cab8350dca4d35cf580a26659af9bda2b764879d8d03c521476ac09"
+    },
+    "compositions/app.html": {
+      "hash": "141f151da13ea7a86b2701829f2361d7b25f706b5b9ce295dabd698f612dd2e2",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/14/141f151da13ea7a86b2701829f2361d7b25f706b5b9ce295dabd698f612dd2e2"
+    },
+    "compositions/brand.html": {
+      "hash": "22bdbce5520317d56684228f331bcd1f530ace1fd29e84456ee94fd7d92aa769",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/22/22bdbce5520317d56684228f331bcd1f530ace1fd29e84456ee94fd7d92aa769"
+    },
+    "compositions/endcard.html": {
+      "hash": "1db210b2fccdd62bd9889de2a4866ab59c3e05d4f55788d252d2ffdd01bd113c",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/1d/1db210b2fccdd62bd9889de2a4866ab59c3e05d4f55788d252d2ffdd01bd113c"
+    },
+    "compositions/feed.html": {
+      "hash": "2aefcb33c1b9ad3bb85f33410860d6c6df68216fa54e673bb5437ff94004b96c",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/2a/2aefcb33c1b9ad3bb85f33410860d6c6df68216fa54e673bb5437ff94004b96c"
+    },
+    "compositions/payoff.html": {
+      "hash": "f43e1189b1ea22c83c22d8464c26c461f5ce33a95f1083329e93ec3195970d97",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/f4/f43e1189b1ea22c83c22d8464c26c461f5ce33a95f1083329e93ec3195970d97"
+    },
+    "compositions/question.html": {
+      "hash": "aede81c88d4a9be94f0e670cdc1b82cb84c686f41d9fa2a58c49c8653c695ae7",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/ae/aede81c88d4a9be94f0e670cdc1b82cb84c686f41d9fa2a58c49c8653c695ae7"
+    },
+    "hyperframes.json": {
+      "hash": "35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
+    },
+    "hyperframes.lock.json": {
+      "hash": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/ca/ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    "index.html": {
+      "hash": "ebb3e91fddc5c2205c5e186dff47d80502641349a525a9fdb426ad1615108537",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/eb/ebb3e91fddc5c2205c5e186dff47d80502641349a525a9fdb426ad1615108537"
+    },
+    "meta.json": {
+      "hash": "245566fbc24f6311726f5e49a3c3c075d82ed7863beb13d93e27395d4c2d9715",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/24/245566fbc24f6311726f5e49a3c3c075d82ed7863beb13d93e27395d4c2d9715"
+    },
+    "package.json": {
+      "hash": "c5e726dab76da4b2a6bccd16f81f8daac553031f16265e2b15cb00b446913205",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/c5/c5e726dab76da4b2a6bccd16f81f8daac553031f16265e2b15cb00b446913205"
+    },
+    "assets/audio/ludo-afro-reggae.mp3": {
+      "hash": "3b99fb855d3f582a1d33a8d8c4d270e1ceff93adc3a1f0144c98463316cdd0a6",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/3b/3b99fb855d3f582a1d33a8d8c4d270e1ceff93adc3a1f0144c98463316cdd0a6"
+    },
+    "assets/map/abidjan.mp4": {
+      "hash": "35889b8caad8ef3b46ab80614b74e520f077400bcc408eb26e1ae94467e2e3c0",
+      "content": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/35/35889b8caad8ef3b46ab80614b74e520f077400bcc408eb26e1ae94467e2e3c0"
+    }
+  },
+  "revisions": {
+    "f5be44ff-e925-4360-9d70-2a5f6fb00c0a": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793907307192,
+      "endedAt": 1793907307193,
+      "files": {
+        "compositions/app.html": {
+          "before": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/2d/2d2af5a94899b99153720476b568883505676659251ce4779295d71a40c07248",
+          "after": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/24/2457207350e7118c0d7333c4d2516437f40265b32253a31c671e49eab2106084"
+        }
+      }
+    },
+    "ce4248d3-5efc-47c1-9c3b-53f86c722a22": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793907325645,
+      "endedAt": 1793907325646,
+      "files": {
+        "compositions/app.html": {
+          "before": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/24/2457207350e7118c0d7333c4d2516437f40265b32253a31c671e49eab2106084",
+          "after": "/root/.cache/hyperframes/history/02e88f8e-2c4f-4094-8386-c328a6a6ffea/blobs/14/141f151da13ea7a86b2701829f2361d7b25f706b5b9ce295dabd698f612dd2e2"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "ce4248d3-5efc-47c1-9c3b-53f86c722a22",
+      "id": "5eceabf9-0526-4c1f-b991-609c7f42839e"
+    },
+    "revisions": {
+      "ce4248d3-5efc-47c1-9c3b-53f86c722a22": [
+        {
+          "id": "5eceabf9-0526-4c1f-b991-609c7f42839e",
+          "scope": "project",
+          "report": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/checks/5eceabf9-0526-4c1f-b991-609c7f42839e.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793907350633,
+          "contentHash": "b13e186101b45c71da12f4f59ba62a9bc5f8099f10f65b174f306c82383c7707",
+          "revision": "ce4248d3-5efc-47c1-9c3b-53f86c722a22",
+          "inputFingerprint": "bc0cd2a9712871d8f49f98a776328f223f49c5372e1b9bc4cf4991b8b23f2d2e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "4a1770b3-5c3c-42e3-b35a-b01ff9ac2d2d",
+        "scope": "project",
+        "report": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/checks/4a1770b3-5c3c-42e3-b35a-b01ff9ac2d2d.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 45000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1793907281294,
+        "contentHash": "b13e186101b45c71da12f4f59ba62a9bc5f8099f10f65b174f306c82383c7707",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "ce4248d3-5efc-47c1-9c3b-53f86c722a22",
+      "id": "60178a5c-9e7d-4688-acae-a18262839b9f-1"
+    },
+    "revisions": {
+      "f5be44ff-e925-4360-9d70-2a5f6fb00c0a": [
+        {
+          "scope": "full",
+          "id": "3acfab7d-a158-4d5b-a8c3-ea869646da36-0",
+          "time": 12.6,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907311995,
+          "contentHash": "e8865d7c63275d13265d33f9529fe7859f95cf3d94e8f1930a9c072b9cb3e9db",
+          "revision": "f5be44ff-e925-4360-9d70-2a5f6fb00c0a",
+          "inputFingerprint": "f0145aa9548176b62d56c7a0bf96df6ce1a48bd1453844509d8c86e91dbcd6d0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "bcb4ad8a-59ad-4886-9676-67c598d51d80"
+        },
+        {
+          "scope": "full",
+          "id": "3acfab7d-a158-4d5b-a8c3-ea869646da36-1",
+          "time": 13.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907311995,
+          "contentHash": "1df8eeedd8d329b2f6945b0d99a1be898882f42ee28f7a0d62bd0dd0a6796cbc",
+          "revision": "f5be44ff-e925-4360-9d70-2a5f6fb00c0a",
+          "inputFingerprint": "f0145aa9548176b62d56c7a0bf96df6ce1a48bd1453844509d8c86e91dbcd6d0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "bcb4ad8a-59ad-4886-9676-67c598d51d80"
+        },
+        {
+          "scope": "full",
+          "id": "3acfab7d-a158-4d5b-a8c3-ea869646da36-2",
+          "time": 14.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907311995,
+          "contentHash": "be0c70fb14bc8b7bdaf902e7cfcb891e88767b78c84eb35f432bd3378f52db0c",
+          "revision": "f5be44ff-e925-4360-9d70-2a5f6fb00c0a",
+          "inputFingerprint": "f0145aa9548176b62d56c7a0bf96df6ce1a48bd1453844509d8c86e91dbcd6d0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "bcb4ad8a-59ad-4886-9676-67c598d51d80"
+        },
+        {
+          "scope": "full",
+          "id": "3acfab7d-a158-4d5b-a8c3-ea869646da36-3",
+          "time": 15.4,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907311995,
+          "contentHash": "e440ff00b90569a43b062ea589644291aca0c151f71d2c27a6af7f5f098d7812",
+          "revision": "f5be44ff-e925-4360-9d70-2a5f6fb00c0a",
+          "inputFingerprint": "f0145aa9548176b62d56c7a0bf96df6ce1a48bd1453844509d8c86e91dbcd6d0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "bcb4ad8a-59ad-4886-9676-67c598d51d80"
+        },
+        {
+          "scope": "full",
+          "id": "3acfab7d-a158-4d5b-a8c3-ea869646da36-4",
+          "time": 19.9,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907311995,
+          "contentHash": "5208f2efd1740d710c1cb7bada97180765470b46b2696002fe5a9027f8619be3",
+          "revision": "f5be44ff-e925-4360-9d70-2a5f6fb00c0a",
+          "inputFingerprint": "f0145aa9548176b62d56c7a0bf96df6ce1a48bd1453844509d8c86e91dbcd6d0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "bcb4ad8a-59ad-4886-9676-67c598d51d80"
+        },
+        {
+          "scope": "full",
+          "id": "3acfab7d-a158-4d5b-a8c3-ea869646da36-5",
+          "time": 22.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907311995,
+          "contentHash": "cd1804b91e673fea4dbab62fc3d123d78b2448382786ddd1dfb25a5d1cccd679",
+          "revision": "f5be44ff-e925-4360-9d70-2a5f6fb00c0a",
+          "inputFingerprint": "f0145aa9548176b62d56c7a0bf96df6ce1a48bd1453844509d8c86e91dbcd6d0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "bcb4ad8a-59ad-4886-9676-67c598d51d80"
+        },
+        {
+          "scope": "full",
+          "id": "3acfab7d-a158-4d5b-a8c3-ea869646da36-6",
+          "time": 30.95,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907311995,
+          "contentHash": "3512b80ce722d6567bd50297258ecc8c676467a80217ca34365e991c09272dda",
+          "revision": "f5be44ff-e925-4360-9d70-2a5f6fb00c0a",
+          "inputFingerprint": "f0145aa9548176b62d56c7a0bf96df6ce1a48bd1453844509d8c86e91dbcd6d0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "bcb4ad8a-59ad-4886-9676-67c598d51d80"
+        }
+      ],
+      "ce4248d3-5efc-47c1-9c3b-53f86c722a22": [
+        {
+          "scope": "full",
+          "id": "60178a5c-9e7d-4688-acae-a18262839b9f-0",
+          "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/152fe1fb-3ebc-4ba3-8afd-c6a1c1f40c7c/frame-00-at-14s.png",
+          "time": 14,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907328142,
+          "contentHash": "8599a21aaa13067e81a5aa8c11f53a87e4bab085fd8f4a930a19667bc391fdc9",
+          "revision": "ce4248d3-5efc-47c1-9c3b-53f86c722a22",
+          "inputFingerprint": "bc0cd2a9712871d8f49f98a776328f223f49c5372e1b9bc4cf4991b8b23f2d2e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "60178a5c-9e7d-4688-acae-a18262839b9f-1",
+          "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/152fe1fb-3ebc-4ba3-8afd-c6a1c1f40c7c/frame-01-at-30.95s.png",
+          "time": 30.95,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793907328142,
+          "contentHash": "3512b80ce722d6567bd50297258ecc8c676467a80217ca34365e991c09272dda",
+          "revision": "ce4248d3-5efc-47c1-9c3b-53f86c722a22",
+          "inputFingerprint": "bc0cd2a9712871d8f49f98a776328f223f49c5372e1b9bc4cf4991b8b23f2d2e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-0",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-00-at-0.3s.png",
+        "time": 0.3,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290824,
+        "contentHash": "4f6ee0900d2586e05dee4bee1ec7fde96dc3ea6a72549623d4b3b9d3baea5231",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-1",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-01-at-2.2s.png",
+        "time": 2.2,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "1ed76fa54612b2fd01566ff381e6e4506a05155f00dc63f40df4436fb97effde",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-2",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-02-at-3.5s.png",
+        "time": 3.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "dd95eeee395df8bed21775fac99d96d31ae1421fff0490401a9e50fa0d3b881f",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-3",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-03-at-4.6s.png",
+        "time": 4.6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "346e36e75215279d370487051927b7b8e9ba2f670ab0478cbe2881397f4cbe8d",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-4",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-04-at-6.4s.png",
+        "time": 6.4,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "961122867d00f18fc34fed0078f63928b0358f241309f2fbbf57b71d7610996a",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-5",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-05-at-8.6s.png",
+        "time": 8.6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "e82079c56031c786187f187c69a94c3b471ffc74424271491a2c3a3bd1a38ec7",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-6",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-06-at-10.5s.png",
+        "time": 10.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "5f0c93f01cecbe57d13a049609aa132db7f950ea84ae16e01c307d62203d6200",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-7",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-07-at-11.6s.png",
+        "time": 11.6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "4cdda9a94bd1825a7a018865033311c30cfd4a6f035dbf03dce996a1e0f12c18",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-8",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-08-at-12.4s.png",
+        "time": 12.4,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "53ba499e115021b7490a876a7c03b8f85f7034a9c7f86302e56a608f7fbbecf5",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-9",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-09-at-13.2s.png",
+        "time": 13.2,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "f4d7d74a19916efa4a311234566e5cf20954a45be921bcc852a694d0e9d003dd",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-10",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-10-at-14.4s.png",
+        "time": 14.4,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "56a95adcf94efc887607ce06ac1908bae2b37d6b49679c64780412d72ab9080b",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-11",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-11-at-16.2s.png",
+        "time": 16.2,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "75dc653f77b1443d8ff615541f94f0069da000e8cdb996b0d22bc117378786d9",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-12",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-12-at-19.3s.png",
+        "time": 19.3,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "b27b079f315b47a4cacce77c2851fe89925c2f54ce8fbd4f0121325ce874ec13",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-13",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-13-at-21.8s.png",
+        "time": 21.8,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "d80293801f81d8453c5cabbe7440b17435d689b42c116dde04eec4bb3258e2af",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-14",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-14-at-23.4s.png",
+        "time": 23.4,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "35ae3c63b4e0b02924d90df9db74776491edf7c64c250d410ff7a424422f2b00",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-15",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-15-at-25.6s.png",
+        "time": 25.6,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "5e2f3a583c29551a26cfcad5b78a1246ca900625206dd8cf937ac106ed7352dd",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-16",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-16-at-29.8s.png",
+        "time": 29.8,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "3512b80ce722d6567bd50297258ecc8c676467a80217ca34365e991c09272dda",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "d2bf2f2d-ae31-4159-9a22-2f75f37eac58-17",
+        "image": "/home/user/designgt/trouvaille-robe/.hyperframes/artifacts/snapshots/d045e942-3ead-4a1f-b08b-d00bcd2dfd0d/frame-17-at-30.95s.png",
+        "time": 30.95,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793907290825,
+        "contentHash": "3512b80ce722d6567bd50297258ecc8c676467a80217ca34365e991c09272dda",
+        "revision": null,
+        "inputFingerprint": "fbf3dc7f85cbeb81c0135b34232fc550f1df712eda9c17865bbd481d4573852f",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "bcb4ad8a-59ad-4886-9676-67c598d51d80",
+      "completedAt": 1793907424097,
+      "output": "/home/user/designgt/trouvaille-robe/renders/trouvaille-robe-9x16.mp4",
+      "status": "completed",
+      "revision": "ce4248d3-5efc-47c1-9c3b-53f86c722a22"
+    },
+    "retainedRevisions": [
+      "ce4248d3-5efc-47c1-9c3b-53f86c722a22"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

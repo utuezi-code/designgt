@@ -1,0 +1,330 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    #ap-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+    .lt { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; white-space: nowrap; }
+    .lt .h { display: block; font-weight: 700; font-size: 96px; line-height: 1.04; letter-spacing: -0.03em; }
+    .lt .k { display: block; margin-bottom: 12px; font-weight: 700; font-size: 34px; color: #b33a28; letter-spacing: 0.02em; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 560px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 70%, rgba(255,255,255,0) 100%); opacity: 0; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    #cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; }
+    #phone { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    #screen { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .ico { width: 14px; height: 14px; }
+    #h-btn { left: 17px; top: 163px; width: 207px; height: 31px; border-radius: 16px; background: #e45846; color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    #h-gal { left: 241px; top: 163px; width: 132px; height: 31px; border-radius: 16px; background: #fcede8; color: #a8361f; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .step { width: 34px; height: 34px; border-radius: 50%; background: #fcede8; display: flex; align-items: center; justify-content: center; }
+    .stepl { width: 120px; text-align: center; font-weight: 700; font-size: 12px; }
+    .stepl span { display: block; font-weight: 400; font-size: 10px; color: #6b6b6b; }
+    #s-cam { background: #0f0f0f; z-index: 2; }
+    #s-wa { z-index: 3; }
+    #cam-view { left: 0; top: 70px; width: 390px; height: 610px; overflow: hidden; }
+    #cam-view img { position: absolute; left: 55px; top: 0; width: 280px; height: 610px; }
+    #cam-view { background: #1a1a1a; }
+    #s-pick .cell { position: absolute; width: 128px; height: 128px; overflow: hidden; background: #eee; }
+    #s-pick .cell img { position: absolute; left: 0; top: 0; width: 128px; height: 128px; object-fit: cover; }
+    #cam-flood { left: 0; top: 0; width: 390px; height: 844px; background: #e45846; }
+    #cam-shutter { left: 160px; top: 728px; width: 70px; height: 70px; border-radius: 50%; border: 5px solid #fff; }
+    #cam-shutter i { position: absolute; left: 5px; top: 5px; width: 50px; height: 50px; border-radius: 50%; background: #fff; }
+    #cam-box { left: 72px; top: 140px; width: 246px; height: 530px; border: 3px solid #ffffff; border-radius: 26px; box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.28); }
+    #cam-chip { left: 45px; top: 90px; width: 300px; height: 40px; border-radius: 20px; background: #ffffff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+    #cam-chip b { width: 10px; height: 10px; border-radius: 50%; background: #e45846; display: inline-block; }
+    #cam-flash { left: 0; top: 0; width: 390px; height: 844px; background: #fff; opacity: 0; }
+    .thumb { overflow: hidden; border-radius: 9px; background: #222; }
+    .thumb img { position: absolute; }
+    .card { left: 0; width: 390px; height: 106px; }
+    .av { left: 9px; top: 0; width: 56px; height: 56px; border-radius: 9px; background: #fcede8; color: #c8432f; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+    .pr { left: 74px; top: -2px; font-weight: 700; font-size: 19px; }
+    .pn { left: 74px; top: 25px; font-size: 12px; }
+    .sh { left: 74px; top: 41px; font-weight: 700; font-size: 14px; }
+    .lo { left: 74px; top: 61px; font-size: 11px; color: #555; }
+    .bt { left: 9px; top: 78px; width: 372px; height: 26px; border-radius: 13px; background: #fcede8; color: #a8361f; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+    .badge { left: 290px; top: 0; padding: 2px 8px; border-radius: 10px; background: #e45846; color: #fff; font-weight: 700; font-size: 10px; opacity: 0; }
+    /* WhatsApp chat (rebuilt from the WhatsApp reference screenshot) */
+    #s-wa { background: #efeae2; }
+    .wa-top { left: 0; top: 0; width: 390px; height: 62px; background: #ffffff; border-bottom: 1px solid #e9e4dd; }
+    .wa-av { left: 34px; top: 12px; width: 38px; height: 38px; border-radius: 50%; background: #dfe5e7; color: #54656f; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    .wa-date { left: 145px; top: 455px; width: 100px; height: 24px; border-radius: 8px; background: #ffffff; color: #54656f; font-size: 11px; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+    .wbub { position: absolute; padding: 7px 9px 18px 10px; border-radius: 10px; font-size: 13.5px; line-height: 1.33; color: #111b21; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
+    .wbub .tm { position: absolute; right: 8px; bottom: 4px; font-size: 10px; color: #667781; display: flex; gap: 3px; align-items: center; }
+    #wa-me { right: 12px; top: 492px; width: 268px; background: #d9fdd3; border-top-right-radius: 3px; }
+    #wa-me .prev { display: flex; gap: 8px; align-items: center; background: #cfeec9; border-radius: 8px; padding: 5px; margin-bottom: 6px; }
+    #wa-me .prev .thumb { position: relative; width: 40px; height: 40px; flex: none; }
+    #wa-me .prev span { font-size: 11px; line-height: 1.25; color: #3b4a54; }
+    #wa-them { left: 12px; top: 652px; width: 250px; background: #ffffff; border-top-left-radius: 3px; }
+    .wa-in { left: 8px; top: 786px; width: 316px; height: 44px; border-radius: 22px; background: #ffffff; display: flex; align-items: center; padding-left: 44px; padding-right: 16px; font-size: 14px; color: #8696a0; overflow: hidden; white-space: nowrap; }
+    #wa-typed { position: absolute; left: 44px; top: 12px; width: 260px; font-size: 14px; color: #111b21; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .wa-mic { left: 332px; top: 786px; width: 44px; height: 44px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; }
+    #finger { left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
+    /* map scene (real map of Abidjan, baked) */
+    #mp { position: absolute; inset: 0; opacity: 0; }
+    #mp-still, #mp-video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    #mp-svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .mpl { position: absolute; left: 0; top: 0; padding: 10px 26px; border-radius: 999px; background: #e45846; color: #fff; font-weight: 700; font-size: 42px; white-space: nowrap; opacity: 0; box-shadow: 0 10px 24px rgba(150,40,20,0.3); }
+    .mpl.best { background: #1b1b1b; }
+    #mp-toi { position: absolute; left: 0; top: 0; padding: 6px 18px; border-radius: 999px; background: #ffffff; font-weight: 700; font-size: 38px; opacity: 0; box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
+    #mp-title { position: absolute; left: 0; width: 1080px; top: 200px; text-align: center; }
+    #mp-title span { display: inline-block; padding: 20px 46px; border-radius: 30px; background: rgba(255,255,255,0.95); font-weight: 700; font-size: 84px; letter-spacing: -0.03em; box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    #mp-credit { position: absolute; right: 40px; top: 1282px; padding: 6px 14px; border-radius: 10px; background: rgba(20,20,20,0.6); color: #fff; font-size: 20px; }
+  </style>
+  <div id="root" data-composition-id="app" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="ap-bg"></div>
+    <div id="cam">
+      <div id="phone">
+        <div id="screen" data-layout-allow-occlusion data-layout-ignore>
+          <div class="scr" id="s-home">
+            <img class="abs" src="assets/brand/trouvaille-icon.svg" style="left:17px;top:10px;width:28px;height:28px" alt="" />
+            <div class="abs b" style="left:52px;top:11px;font-size:19px">Trouvaille</div>
+            <div class="abs pill" style="left:268px;top:11px"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 1 0-14 0c0 5 7 12 7 12z" fill="none" stroke="#c8432f" stroke-width="2.4"/><circle cx="12" cy="10" r="2.5" fill="#c8432f"/></svg>Ma position</div>
+            <div class="abs" style="left:0;top:46px;width:390px;height:1px;background:#ececec"></div>
+            <div class="abs b" style="left:17px;top:56px;font-size:21px;letter-spacing:-0.01em">Trouve-le près de toi</div>
+            <div class="abs" style="left:17px;top:88px;width:330px;font-size:11.5px;color:#555;line-height:1.4">Photo ou nom du produit : on te montre les vendeurs, leurs prix et leur WhatsApp.</div>
+            <div class="abs" style="left:17px;top:124px;width:356px;height:32px;border-radius:10px;background:#f0efed;display:flex;align-items:center;gap:8px;padding-left:12px;font-size:12.5px;color:#666"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="#555" stroke-width="2.2"/><path d="M16 16l4 4" stroke="#555" stroke-width="2.2" stroke-linecap="round"/></svg>Rechercher un produit</div>
+            <div id="h-btn" class="abs"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="#fff" stroke-width="2.2"/></svg>Prendre une photo</div>
+            <div id="h-gal" class="abs"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="#a8361f" stroke-width="2.2"/><circle cx="9" cy="9" r="1.6" fill="#a8361f"/><path d="M5 18l5-5 4 4 2-2 3 3" fill="none" stroke="#a8361f" stroke-width="2.2"/></svg>Galerie</div>
+            <div class="abs b" style="left:17px;top:226px;font-size:15px">Comment ça marche</div>
+            <div class="abs" style="left:83px;top:270px;width:229px;height:2px;background:#ececec"></div>
+            <div class="abs step" style="left:66px;top:254px"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="#e45846" stroke-width="2.2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="#e45846" stroke-width="2.2"/></svg></div>
+            <div class="abs step" style="left:180px;top:254px"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l9-9h7v7l-9 9z" fill="none" stroke="#e45846" stroke-width="2.2" stroke-linejoin="round"/><circle cx="15" cy="9" r="1.5" fill="#e45846"/></svg></div>
+            <div class="abs step" style="left:295px;top:254px;background:#e45846"><svg class="ico" viewBox="0 0 24 24"><path d="M5 19l1.5-4A7 7 0 1 1 9 18z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+            <div class="abs stepl" style="left:23px;top:298px">Photographie<span>ou écris le nom</span></div>
+            <div class="abs stepl" style="left:137px;top:298px">Compare<span>les prix près de toi</span></div>
+            <div class="abs stepl" style="left:252px;top:298px">Contacte<span>le vendeur sur WhatsApp</span></div>
+            <div class="abs" style="left:17px;top:344px;width:356px;height:52px;border-radius:12px;background:#fcede8"></div>
+            <div class="abs" style="left:28px;top:354px;width:32px;height:32px;border-radius:8px;background:#e45846"></div>
+            <svg class="abs" viewBox="0 0 24 24" style="left:35px;top:361px;width:18px;height:18px"><path d="M4 10h16v10H4z M3 6l2-3h14l2 3v3H3z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="#fff" stroke-width="2"/></svg>
+            <div class="abs b" style="left:70px;top:353px;font-size:13px">Tu es commerçant ?</div>
+            <div class="abs" style="left:70px;top:371px;font-size:11px;color:#555">Mets tes produits en ligne, c'est gratuit</div>
+          </div>
+          <div class="scr" id="s-res">
+            <div class="abs b" style="left:14px;top:12px;font-size:18px">‹</div>
+            <div class="abs b" style="left:34px;top:13px;font-size:16px">Résultats</div>
+            <div class="abs pill" style="left:268px;top:11px"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 1 0-14 0c0 5 7 12 7 12z" fill="none" stroke="#c8432f" stroke-width="2.4"/><circle cx="12" cy="10" r="2.5" fill="#c8432f"/></svg>Autour de moi</div>
+            <div class="abs" style="left:0;top:46px;width:390px;height:1px;background:#ececec"></div>
+            <div id="r-thumb" class="abs thumb" style="left:9px;top:50px;width:40px;height:40px"><img src="assets/photos/robe.jpg" style="left:0;top:-6px;width:40px;height:87px" alt="" /></div>
+            <div id="r-title" class="abs b" style="left:57px;top:50px;font-size:15px">Robe longue en wax · verte</div>
+            <div id="r-pasca" class="abs b" style="left:57px;top:72px;font-size:12px;color:#c8432f">✎ Pas ça ?</div>
+            <div class="abs" style="left:0;top:104px;width:390px;height:1px;background:#ececec"></div>
+            <div class="abs b" style="left:14px;top:113px;font-size:15px">4 offres</div>
+            <div class="abs" style="left:0;top:138px;width:390px;height:1px;background:#ececec"></div>
+            <div id="r-cards"></div>
+            <div id="r-disc" class="abs" style="left:0;top:604px;width:390px;text-align:center;font-size:10.5px;color:#555">Prix indicatifs : le prix final se discute avec le vendeur.</div>
+          </div>
+          <div class="scr" id="s-cam">
+            <div id="cam-view" class="abs"><img src="assets/photos/robe.jpg" alt="" /></div>
+            <div id="cam-box" class="abs"></div>
+            <div id="cam-chip" class="abs"><b></b>Robe longue en wax · verte</div>
+            <div class="abs b" style="left:20px;top:22px;font-size:20px;color:#fff">✕</div>
+            <div class="abs" style="left:0;top:712px;width:390px;text-align:center;font-size:13px;color:#ddd">Capture d'écran · aujourd'hui</div>
+            <div id="cam-flood" class="abs"></div>
+            <div id="cam-flash" class="abs"></div>
+          </div>
+          <div class="scr" id="s-pick">
+            <div class="abs b" style="left:16px;top:16px;font-size:16px">Photos récentes</div>
+            <div class="abs" style="left:300px;top:18px;font-size:13px;color:#c8432f;font-weight:700">Annuler</div>
+            <div class="cell" style="left:2px;top:56px"><img src="assets/photos/robe.jpg" style="object-position:50% 25%" alt="" /></div>
+            <div class="cell" style="left:131px;top:56px"><img src="assets/photos/sneakers-bw.jpg" alt="" /></div>
+            <div class="cell" style="left:260px;top:56px"><img src="assets/photos/phone-hand.jpg" alt="" /></div>
+            <div class="cell" style="left:2px;top:185px"><img src="assets/photos/hp-red-man.jpg" alt="" /></div>
+            <div class="cell" style="left:131px;top:185px"><img src="assets/photos/hp-grado.jpg" alt="" /></div>
+            <div class="cell" style="left:260px;top:185px;background:#e7d9cf"></div>
+            <div class="abs" id="pk-sel" style="left:6px;top:60px;width:20px;height:20px;border-radius:50%;background:#e45846;border:2px solid #fff"></div>
+          </div>
+          <div class="scr" id="s-wa">
+            <div class="abs wa-top"></div>
+            <svg class="abs" viewBox="0 0 24 24" style="left:8px;top:20px;width:22px;height:22px"><path d="M15 5l-7 7 7 7" fill="none" stroke="#111b21" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="abs wa-av">MA</div>
+            <div class="abs b" style="left:82px;top:12px;font-size:15px;color:#111b21">Mode Abidjan</div>
+            <div class="abs" style="left:82px;top:33px;font-size:11.5px;color:#667781">en ligne</div>
+            <svg class="abs" viewBox="0 0 24 24" style="left:300px;top:20px;width:22px;height:22px"><rect x="3" y="7" width="12" height="10" rx="2" fill="none" stroke="#111b21" stroke-width="2"/><path d="M15 11l5-3v8l-5-3z" fill="none" stroke="#111b21" stroke-width="2" stroke-linejoin="round"/></svg>
+            <svg class="abs" viewBox="0 0 24 24" style="left:345px;top:20px;width:22px;height:22px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="#111b21" stroke-width="2" stroke-linejoin="round"/></svg>
+            <div class="abs wa-date">Aujourd'hui</div>
+            <div id="wa-me" class="wbub"><div class="prev"><div class="thumb"><img src="assets/photos/robe.jpg" style="left:0;top:-6px;width:40px;height:87px" alt="" /></div><span><b>Robe longue en wax · verte</b><br />18 500 F · vu sur Trouvaille</span></div>Bonjour ! Je vous ai trouvée sur Trouvaille. La robe verte est disponible en taille M ?<span class="tm">14:32 <svg viewBox="0 0 18 11" width="16" height="10"><path d="M1 6l3 3 7-8M7 9l1 1 8-9" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div id="wa-them" class="wbub">Oui, en M et en L ! Passez l'essayer à la boutique, on est à Cocody.<span class="tm">14:33</span></div>
+            <div class="abs wa-in"><span id="wa-ph">Message</span><div id="wa-typed">Bonjour ! Je vous ai trouvée sur Trouvaille. La robe…</div></div>
+            <svg class="abs" viewBox="0 0 24 24" style="left:20px;top:798px;width:22px;height:22px"><circle cx="12" cy="12" r="9" fill="none" stroke="#8696a0" stroke-width="1.8"/><circle cx="9" cy="10" r="1.2" fill="#8696a0"/><circle cx="15" cy="10" r="1.2" fill="#8696a0"/><path d="M8 14.5a5 5 0 0 0 8 0" fill="none" stroke="#8696a0" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <div class="abs wa-mic"><svg id="wa-micico" viewBox="0 0 24 24" width="20" height="20"><rect x="9" y="3" width="6" height="11" rx="3" fill="#fff"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><svg id="wa-send" class="abs" viewBox="0 0 24 24" width="20" height="20" style="left:12px;top:12px;opacity:0"><path d="M3 20l18-8L3 4v6l12 2-12 2z" fill="#fff"/></svg></div>
+          </div>
+          <div id="finger" class="abs"></div>
+        </div>
+      </div>
+    </div>
+    <div id="mp">
+      <img id="mp-still" src="assets/map/abidjan-end.jpg" alt="Carte de Cocody, Abidjan" />
+      <video id="mp-video" class="clip" src="assets/map/abidjan.mp4" muted playsinline data-start="7.95" data-duration="2.75" data-playback-rate="1.6" data-track-index="9"></video>
+      <svg id="mp-svg" viewBox="0 0 1080 1920"></svg>
+      <div id="mp-labels"></div>
+      <div id="mp-toi">Toi</div>
+      <div id="mp-title"><span>Autour de <span class="acc" style="padding:0;box-shadow:none;background:none;font-size:inherit">toi.</span></span></div>
+      <div id="mp-credit" data-layout-ignore>Carte : Esri, HERE, Garmin, © OpenStreetMap</div>
+    </div>
+    <div class="scrim" id="ap-scrim"></div>
+    <div id="lt1" class="lt clip" data-start="0.35" data-duration="3.15" data-track-index="1"><span class="k w">1 · Galerie</span><span class="h"><span class="w">Envoie</span> <span class="w">ta</span></span><span class="h"><span class="w acc">capture.</span></span></div>
+    <div id="lt2" class="lt clip" data-start="3.6" data-duration="2.5" data-track-index="2"><span class="k w">2 · Reconnaissance</span><span class="h"><span class="w">Reconnue</span></span><span class="h"><span class="w">par</span> <span class="w acc">l'image.</span></span></div>
+    <div id="lt3" class="lt clip" data-start="6.2" data-duration="1.95" data-track-index="3"><span class="k w">3 · Compare</span><span class="h"><span class="w">Les</span> <span class="w">prix</span></span><span class="h"><span class="w">près</span> <span class="w">de</span> <span class="w acc">toi.</span></span></div>
+    <div id="lt4" class="lt clip" data-start="11.3" data-duration="3.15" data-track-index="4"><span class="k w">4 · Contacte</span><span class="h"><span class="w">Écris</span> <span class="w">à</span> <span class="w">la</span> <span class="w">boutique</span></span><span class="h"><span class="w">sur</span> <span class="w acc">WhatsApp.</span></span></div>
+  </div>
+  <script>
+    (function () {
+      var A = 7.5;
+      var T = function (f) { return f - A; };
+      var S = 592 / 390;
+      // shops placed on the real map at the held view (Cocody); distances follow the map scale (~2.07 m/px)
+      var SHOPS = [
+        { x: 760, y: 535, price: "18 500 F", init: "MA", name: "Mode Abidjan", dist: "À 650 m" },
+        { x: 110, y: 560, price: "22 000 F", init: "WB", name: "Wax Boutique", dist: "À 980 m" },
+        { x: 130, y: 1180, price: "24 000 F", init: "CT", name: "Couture Treichville", dist: "À 1,2 km" },
+        { x: 980, y: 1250, price: "26 500 F", init: "PC", name: "Pagne Chic", dist: "À 1,4 km" },
+      ];
+      var TOI = { x: 540, y: 760 };
+      var host = document.getElementById("r-cards");
+      SHOPS.forEach(function (s, i) {
+        var c = document.createElement("div");
+        c.className = "abs card";
+        c.id = "card-" + i;
+        c.style.top = 148 + i * 112 + "px";
+        c.innerHTML = '<div class="abs av">' + s.init + '</div><div class="abs pr">' + s.price + '</div><div class="abs pn">Robe longue wax · Verte</div><div class="abs sh">' + s.name + '</div><div class="abs lo">' + s.dist + ' · en boutique</div><div class="abs bt">Contacter sur WhatsApp</div>' + (i === 0 ? '<div class="abs badge" id="badge-0">Le plus proche</div>' : "");
+        host.appendChild(c);
+      });
+      var NS = "http://www.w3.org/2000/svg";
+      var svg = document.getElementById("mp-svg");
+      function el(t, a, p) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; }
+      var pinD = "M0,-58 C-26,-58 -40,-38 -40,-20 C-40,6 0,40 0,40 C0,40 40,6 40,-20 C40,-38 26,-58 0,-58 Z";
+      var route = el("path", { d: "M" + TOI.x + "," + TOI.y + " L" + SHOPS[0].x + "," + (SHOPS[0].y + 36), fill: "none", stroke: "#1b1b1b", "stroke-width": 9, "stroke-linecap": "round", "stroke-dasharray": "2 20" });
+      var pins = SHOPS.map(function (s) {
+        var pg = el("g", { transform: "translate(" + s.x + "," + s.y + ")" });
+        var inner = el("g", {}, pg);
+        el("ellipse", { cx: 0, cy: 44, rx: 22, ry: 7, fill: "rgba(60,30,20,0.3)" }, inner);
+        el("path", { d: pinD, fill: "#e45846", stroke: "#ffffff", "stroke-width": 4 }, inner);
+        el("rect", { x: -16, y: -36, width: 32, height: 26, rx: 5, fill: "#fff" }, inner);
+        return inner;
+      });
+      var you = el("g", { transform: "translate(" + TOI.x + "," + TOI.y + ")" });
+      var halo = el("circle", { cx: 0, cy: 0, r: 70, fill: "rgba(66,133,244,0.18)" }, you);
+      el("circle", { cx: 0, cy: 0, r: 26, fill: "#ffffff" }, you);
+      el("circle", { cx: 0, cy: 0, r: 18, fill: "#4285f4" }, you);
+      var labels = document.getElementById("mp-labels");
+      SHOPS.forEach(function (s, i) {
+        var d = document.createElement("div");
+        d.className = "mpl" + (i === 0 ? " best" : "");
+        d.id = "mpl-" + i;
+        d.textContent = s.price + " · " + s.dist.replace("À ", "");
+        labels.appendChild(d);
+      });
+
+      var tl = gsap.timeline({ paused: true });
+      gsap.set("#cam", { x: 0, y: 0, scale: 1, transformOrigin: "0 0" });
+      gsap.set("#s-res, #s-cam, #s-wa, #wa-me, #wa-them, #wa-typed", { opacity: 0 });
+      gsap.set("#cam-box, #cam-chip", { opacity: 0 });
+      gsap.set("[id^=card-], #r-disc", { opacity: 0 });
+      gsap.set(you, { opacity: 0 });
+      gsap.set(route, { opacity: 0 });
+      gsap.set("#mp-toi", { x: TOI.x - 62, y: TOI.y + 44 });
+      SHOPS.forEach(function (s, i) {
+        var lx = Math.max(30, Math.min(1080 - 30 - 400, s.x - 190));
+        gsap.set("#mpl-" + i, { x: lx, y: s.y - 150 });
+      });
+      function camTo(at, sx, sy, Z, fx, fy, dur, ease) {
+        var px = 230 + 14 + sx * S, py = 480 + 14 + sy * S;
+        tl.to("#cam", { x: fx - Z * px, y: fy - Z * py, scale: Z, duration: dur, ease: ease || "power3.inOut" }, T(at));
+      }
+      function tap(at, sx, sy) {
+        tl.set("#finger", { x: sx, y: sy }, T(at) - 0.35);
+        tl.fromTo("#finger", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power3.out" }, T(at) - 0.35);
+        tl.to("#finger", { scale: 0.78, duration: 0.08, ease: "power2.in" }, T(at) - 0.04);
+        tl.to("#finger", { scale: 1, duration: 0.18, ease: "power2.out" }, T(at) + 0.06);
+        tl.to("#finger", { opacity: 0, duration: 0.2 }, T(at) + 0.3);
+      }
+      function words(id, at) {
+        tl.fromTo("#" + id + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, T(at));
+      }
+      function out(id, at) {
+        tl.to("#" + id + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.16, stagger: 0.02, ease: "power2.in" }, T(at));
+      }
+      // phone arrives; a white scrim keeps the titles readable over the phone
+      tl.fromTo("#phone", { y: 1500, rotation: 5 }, { y: 0, rotation: 0, duration: 0.8, ease: "expo.out" }, 0);
+      tl.fromTo("#ap-scrim", { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(7.8));
+      words("lt1", 7.85);
+      camTo(8.6, 307, 178, 1.25, 540, 900, 0.55);
+      tap(9.25, 307, 178);
+      gsap.set("#s-pick, #pk-sel", { opacity: 0 });
+      tl.set("#s-pick", { opacity: 1 }, T(9.35));
+      tl.fromTo("#s-pick", { y: 844 }, { y: 0, duration: 0.35, ease: "power3.out" }, T(9.35));
+      camTo(9.35, 195, 200, 1.15, 540, 900, 0.5);
+      tap(10.0, 66, 120);
+      tl.fromTo("#pk-sel", { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)" }, T(10.0));
+      tl.set("#s-cam", { opacity: 1 }, T(10.2));
+      tl.fromTo("#s-cam", { clipPath: "inset(56px 260px 660px 2px round 4px)" }, { clipPath: "inset(0px 0px 0px 0px round 0px)", duration: 0.45, ease: "power3.inOut" }, T(10.2));
+      tl.fromTo("#cam-flood", { opacity: 0 }, { opacity: 0, duration: 0.01 }, T(10.2));
+      tl.set("#s-pick", { opacity: 0 }, T(10.7));
+      tl.fromTo("#cam-view img", { scale: 0.46, x: -50, y: -14, transformOrigin: "0% 0%" }, { scale: 1, x: 0, y: 0, duration: 0.45, ease: "power3.inOut" }, T(10.2));
+      camTo(10.2, 195, 420, 0.95, 540, 1250, 0.5);
+      out("lt1", 10.75);
+      words("lt2", 11.1);
+      tl.fromTo("#cam-box", { opacity: 0, scale: 1.3, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, T(10.5));
+      tl.fromTo("#cam-chip", { opacity: 0, y: 14, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, T(10.85));
+      camTo(10.5, 195, 420, 0.95, 540, 1250, 0.6);
+      tl.set("#s-res", { opacity: 1 }, T(12.0));
+      tl.to("#s-cam", { opacity: 0, duration: 0.25, ease: "power2.in" }, T(12.05));
+      tl.fromTo("#r-thumb", { x: 195 - 29, y: 400 - 70, scale: 8, transformOrigin: "50% 50%" }, { x: 0, y: 0, scale: 1, duration: 0.6, ease: "power3.inOut" }, T(12.0));
+      tl.fromTo("#r-title", { x: 30, y: 300, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.6, ease: "power3.inOut" }, T(12.0));
+      tl.fromTo("#r-pasca", { opacity: 0 }, { opacity: 1, duration: 0.2 }, T(12.55));
+      tl.set("#s-home", { opacity: 0 }, T(12.6));
+      tl.set("#s-cam", { visibility: "hidden" }, T(12.6));
+      camTo(12.0, 195, 330, 1.05, 540, 1010, 0.6);
+      out("lt2", 13.45);
+      words("lt3", 13.75);
+      SHOPS.forEach(function (s, i) {
+        tl.fromTo("#card-" + i, { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, T(12.7) + i * 0.13);
+      });
+      tl.fromTo("#r-disc", { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(13.3));
+      tl.fromTo("#badge-0", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.2)" }, T(13.9));
+      // 15.45 — the real map: the city, then Cocody, then the shops around you
+      out("lt3", 15.3);
+      tl.to("#ap-scrim", { opacity: 0, duration: 0.2 }, T(15.3));
+      tl.to("#cam", { y: -1400, scale: 0.85, duration: 0.45, ease: "power3.in" }, T(15.4));
+      tl.fromTo("#mp", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, T(15.45));
+      tl.fromTo("#mp-title span", { opacity: 0, y: -20, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, T(15.7));
+      tl.fromTo(you, { opacity: 0 }, { opacity: 1, duration: 0.25 }, T(17.0));
+      tl.fromTo(halo, { scale: 0.3, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.6, ease: "power3.out" }, T(17.0));
+      tl.fromTo("#mp-toi", { opacity: 0 }, { opacity: 1, duration: 0.25 }, T(17.05));
+      pins.forEach(function (p, i) {
+        tl.fromTo(p, { scale: 0, transformOrigin: "50% 100%" }, { scale: 1.15, duration: 0.45, ease: "back.out(2.4)" }, T(17.2) + i * 0.12);
+        tl.fromTo("#mpl-" + i, { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, T(17.3) + i * 0.12);
+      });
+      tl.fromTo(route, { opacity: 0 }, { opacity: 1, duration: 0.4 }, T(17.9));
+      // 18.7 — back to the phone, the nearest shop
+      tl.to("#mp", { opacity: 0, duration: 0.35, ease: "power2.in" }, T(18.65));
+      tl.set("#cam", { y: 1400, scale: 0.85 }, T(18.75));
+      camTo(18.76, 195, 241, 1.15, 540, 1000, 0.5, "power3.out");
+      tl.to("#ap-scrim", { opacity: 1, duration: 0.3 }, T(18.8));
+      words("lt4", 18.85);
+      tap(19.4, 195, 241);
+      // WhatsApp opens with the message prefilled, then it's sent
+      tl.set("#s-wa", { opacity: 1 }, T(19.5));
+      tl.fromTo("#s-wa", { y: 844 }, { y: 0, duration: 0.45, ease: "power3.out" }, T(19.5));
+      camTo(19.5, 195, 640, 1.12, 540, 1050, 0.6);
+      tl.set("#s-res", { opacity: 0 }, T(20.0));
+      tl.set("#wa-typed", { opacity: 1 }, T(20.0));
+      tl.set("#wa-ph", { opacity: 0 }, T(20.0));
+      tl.set("#wa-ph", { opacity: 1 }, T(20.9));
+      tl.fromTo("#wa-typed", { clipPath: "inset(0px 100% 0px 0px)" }, { clipPath: "inset(0px 0% 0px 0px)", duration: 0.7, ease: "none" }, T(20.0));
+      tl.to("#wa-micico", { opacity: 0, duration: 0.1 }, T(20.05));
+      tl.to("#wa-send", { opacity: 1, duration: 0.1 }, T(20.05));
+      tap(20.85, 354, 808);
+      tl.to("#wa-typed", { opacity: 0, duration: 0.1 }, T(20.88));
+      tl.to("#wa-send", { opacity: 0, duration: 0.1 }, T(20.95));
+      tl.to("#wa-micico", { opacity: 1, duration: 0.1 }, T(20.95));
+      tl.fromTo("#wa-me", { opacity: 0, y: 60, scale: 0.92, transformOrigin: "100% 100%" }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, T(20.9));
+      tl.fromTo("#wa-them", { opacity: 0, y: 40, scale: 0.92, transformOrigin: "0% 100%" }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, T(21.5));
+      out("lt4", 22.2);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["app"] = tl;
+    })();
+  </script>
+</template>
