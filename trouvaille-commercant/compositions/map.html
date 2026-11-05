@@ -1,0 +1,78 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    .ph { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    .sc { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .finger { position: absolute; left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
+    .tt { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; white-space: nowrap; }
+    .tt .h { display: block; font-weight: 700; font-size: 94px; line-height: 1.04; letter-spacing: -0.03em; color: #1b1b1b; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 72%, rgba(255,255,255,0) 100%); }
+    .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+
+
+    #mp-still, #mp-video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    #mp-svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .chip { position: absolute; padding: 12px 26px; border-radius: 999px; background: #fff; color: #1b1b1b; font-weight: 700; font-size: 38px; white-space: nowrap; box-shadow: 0 10px 24px rgba(0,0,0,0.18); opacity: 0; }
+    #mp-shop { position: absolute; left: 340px; top: 960px; width: 400px; text-align: center; }
+    #mp-shop span { display: inline-block; padding: 12px 28px; border-radius: 999px; background: #e45846; color: #fff; font-weight: 700; font-size: 42px; box-shadow: 0 12px 26px rgba(150,40,20,0.35); }
+    #mp-title { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; }
+    #mp-title span { display: inline-block; padding: 18px 44px; border-radius: 30px; background: rgba(255,255,255,0.95); font-weight: 700; font-size: 76px; line-height: 1.08; letter-spacing: -0.03em; box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    #mp-credit { position: absolute; right: 40px; top: 1282px; padding: 6px 14px; border-radius: 10px; background: rgba(20,20,20,0.6); color: #fff; font-size: 20px; }
+
+  </style>
+  <div id="root" data-composition-id="map" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <img id="mp-still" src="assets/map/angre-end.jpg" alt="Carte d'Angré, Abidjan" />
+    <video id="mp-video" class="clip" src="assets/map/angre.mp4" muted playsinline data-start="0" data-duration="2.6" data-playback-rate="1.5" data-track-index="9"></video>
+    <svg id="mp-svg" viewBox="0 0 1080 1920">
+      <path id="ln0" d="M250,560 L540,840" fill="none" stroke="#1b1b1b" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 18" opacity="0"/>
+      <g id="by0" transform="translate(250,560)" opacity="0"><circle r="40" fill="rgba(66,133,244,0.2)"/><circle r="17" fill="#fff"/><circle r="12" fill="#4285f4"/></g>
+      <path id="ln1" d="M830,610 L540,840" fill="none" stroke="#1b1b1b" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 18" opacity="0"/>
+      <g id="by1" transform="translate(830,610)" opacity="0"><circle r="40" fill="rgba(66,133,244,0.2)"/><circle r="17" fill="#fff"/><circle r="12" fill="#4285f4"/></g>
+      <path id="ln2" d="M200,1110 L540,840" fill="none" stroke="#1b1b1b" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 18" opacity="0"/>
+      <g id="by2" transform="translate(200,1110)" opacity="0"><circle r="40" fill="rgba(66,133,244,0.2)"/><circle r="17" fill="#fff"/><circle r="12" fill="#4285f4"/></g>
+      <path id="ln3" d="M860,1190 L540,840" fill="none" stroke="#1b1b1b" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 18" opacity="0"/>
+      <g id="by3" transform="translate(860,1190)" opacity="0"><circle r="40" fill="rgba(66,133,244,0.2)"/><circle r="17" fill="#fff"/><circle r="12" fill="#4285f4"/></g>
+      <g id="shop" transform="translate(540,840)" opacity="0"><circle id="ring" r="60" fill="none" stroke="#e45846" stroke-width="8"/><path d="M0,-78 C-34,-78 -52,-52 -52,-28 C-52,8 0,54 0,54 C0,54 52,8 52,-28 C52,-52 34,-78 0,-78 Z" fill="#e45846" stroke="#fff" stroke-width="5"/><path d="M-20,-30 h40 v22 h-40 z M-24,-40 l4,-8 h40 l4,8 v6 h-48 z" fill="#fff"/></g>
+    </svg>
+    <div class="chip" id="ch0" style="left:100px;top:450px">Costume ?</div>
+    <div class="chip" id="ch1" style="left:680px;top:500px">Sac à dos ?</div>
+    <div class="chip" id="ch2" style="left:50px;top:1000px">Robe en wax ?</div>
+    <div class="chip" id="ch3" style="left:710px;top:1080px">Hub USB-C ?</div>
+    <div id="mp-shop"><span>Boutique Awa</span></div>
+    <div id="mp-title"><span>Visible par ceux<br />qui <span style="color:#c8432f;padding:0;box-shadow:none;background:none;font-size:inherit">cherchent.</span></span></div>
+    <div id="mp-credit" data-layout-ignore>Carte : Esri, HERE, Garmin, © OpenStreetMap</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: g || 0.08, ease: "power4.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      function tap(f, at, sx, sy) {
+        tl.set(f, { x: sx, y: sy }, at - 0.3);
+        tl.fromTo(f, { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, at - 0.3);
+        tl.to(f, { scale: 0.78, duration: 0.08, ease: "power2.in" }, at - 0.04);
+        tl.to(f, { scale: 1, opacity: 0, duration: 0.22, ease: "power2.out" }, at + 0.06);
+      }
+
+      gsap.set("#mp-shop span, #mp-title span", { opacity: 0 });
+      tl.fromTo("#mp-title span", { opacity: 0, y: -20, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, 0.3);
+      tl.fromTo("#shop", { opacity: 0, scale: 0, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 2.6);
+      tl.fromTo("#mp-shop span", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 2.75);
+      tl.fromTo("#ring", { scale: 0.6, opacity: 1, transformOrigin: "50% 50%" }, { scale: 2.6, opacity: 0, duration: 1.0, ease: "power2.out" }, 2.9);
+      tl.fromTo("#ring", { scale: 0.6, opacity: 1 }, { scale: 2.6, opacity: 0, duration: 1.0, ease: "power2.out" }, 3.9);
+      for (var i = 0; i < 4; i++) {
+        tl.fromTo("#by" + i, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 3.1 + i * 0.15);
+        tl.fromTo("#ch" + i, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 3.2 + i * 0.15);
+        tl.fromTo("#ln" + i, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 3.7 + i * 0.12);
+      }
+      window.__timelines = window.__timelines || {};
+      window.__timelines["map"] = tl;
+    })();
+  </script>
+</template>

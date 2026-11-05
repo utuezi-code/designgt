@@ -1,0 +1,137 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    .ph { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    .sc { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .finger { position: absolute; left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
+    .tt { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; white-space: nowrap; }
+    .tt .h { display: block; font-weight: 700; font-size: 94px; line-height: 1.04; letter-spacing: -0.03em; color: #1b1b1b; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 72%, rgba(255,255,255,0) 100%); }
+    .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+
+
+    .it { left: 0; width: 390px; height: 68px; border-bottom: 1px solid #efefef; opacity: 0; }
+    .it .th { position: absolute; left: 16px; top: 8px; width: 48px; height: 48px; border-radius: 9px; overflow: hidden; background: #eee; }
+    .it .th img { width: 48px; height: 48px; object-fit: cover; }
+    .it .nm { position: absolute; left: 76px; top: 10px; width: 230px; font-weight: 700; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .it .sb { position: absolute; left: 76px; top: 32px; width: 240px; font-size: 11.5px; color: #666; white-space: nowrap; }
+    .it .rt { position: absolute; left: 330px; top: 22px; font-weight: 700; font-size: 12px; color: #c8432f; }
+    #s-pick { background: #fff; }
+    .gc { position: absolute; width: 96px; height: 96px; overflow: hidden; background: #eee; }
+    .gc img { position: absolute; left: 0; top: 0; width: 96px; height: 96px; object-fit: cover; }
+    .gc i { position: absolute; right: 6px; top: 6px; width: 22px; height: 22px; border-radius: 50%; background: #e45846; border: 2px solid #fff; color: #fff; font-style: normal; font-weight: 700; font-size: 10px; display: flex; align-items: center; justify-content: center; opacity: 0; }
+
+  </style>
+  <div id="root" data-composition-id="sell" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div class="bg"></div>
+    <div class="ph" id="sl-ph"><div class="sc" data-layout-allow-occlusion data-layout-ignore>
+      <div class="scr" id="s-sell">
+        <svg class="abs" viewBox="0 0 24 24" style="left:12px;top:16px;width:22px;height:22px"><path d="M15 5l-7 7 7 7" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="abs b" style="left:48px;top:15px;font-size:18px">Vendre</div>
+        <div class="abs" style="left:0;top:52px;width:390px;height:1px;background:#ececec"></div>
+        <div class="abs b" style="left:16px;top:72px;font-size:22px;letter-spacing:-0.01em">Boutique Awa</div>
+        <div class="abs" style="left:16px;top:104px;font-size:13.5px;color:#777">Angré · WhatsApp 07 •• •• •• ••</div>
+        <div class="abs" style="left:16px;top:140px;width:358px;height:46px;border-radius:23px;background:#f2f1ef"></div>
+        <div class="abs" style="left:198px;top:144px;width:172px;height:38px;border-radius:19px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.12)"></div>
+        <div class="abs b" style="left:16px;top:152px;width:180px;text-align:center;font-size:14px;color:#777">Un produit</div>
+        <div class="abs b" style="left:198px;top:152px;width:172px;text-align:center;font-size:14px">Plusieurs photos</div>
+        <div id="sl-drop" class="abs" style="left:16px;top:204px;width:358px;height:148px;border-radius:18px;background:#fcede8;border:2px dashed #f0a090">
+          <svg viewBox="0 0 24 24" style="position:absolute;left:164px;top:28px;width:28px;height:28px"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="#c8432f" stroke-width="2"/><circle cx="9" cy="9" r="1.8" fill="#c8432f"/><path d="M4 19l6-6 4 4 2-2 4 4" fill="none" stroke="#c8432f" stroke-width="2"/></svg>
+          <div class="abs b" style="left:0;top:66px;width:354px;text-align:center;font-size:14.5px;color:#c8432f">Choisir les photos de mes produits</div>
+          <div class="abs b" style="left:0;top:94px;width:354px;text-align:center;font-size:12px;color:#666">Jusqu'à 60 photos d'un coup, depuis ta galerie</div>
+        </div>
+        <div class="abs b" style="left:16px;top:440px;font-size:17px">Tes produits (<span id="sl-n">0</span>)</div>
+        <div class="abs" style="left:0;top:476px;width:390px;height:1px;background:#ececec"></div>
+          <div class="abs it" id="it0" style="top:500px"><div class="th"><img src="assets/photos/sac.jpg" style="object-position:50% 50%" alt="" /></div><div class="nm">Sac à dos noir à rabat pour ordinateur</div><div class="sb">Prix à demander · ajouté aujourd'hui</div><div class="rt">Retirer</div></div>
+          <div class="abs it" id="it1" style="top:568px"><div class="th"><img src="assets/photos/costume.jpg" style="object-position:50% 50%" alt="" /></div><div class="nm">Costume homme 2 pièces croisé gris</div><div class="sb">Prix à demander · ajouté aujourd'hui</div><div class="rt">Retirer</div></div>
+          <div class="abs it" id="it2" style="top:636px"><div class="th"><img src="assets/photos/hub.jpg" style="object-position:50% 50%" alt="" /></div><div class="nm">Adaptateur hub USB-C 4 en 1 vers HDMI</div><div class="sb">Prix à demander · ajouté aujourd'hui</div><div class="rt">Retirer</div></div>
+          <div class="abs it" id="it3" style="top:704px"><div class="th"><img src="assets/photos/robe.jpg" style="object-position:50% 25%" alt="" /></div><div class="nm">Robe longue en wax verte</div><div class="sb">Prix à demander · ajouté aujourd'hui</div><div class="rt">Retirer</div></div>
+          <div class="abs it" id="it4" style="top:772px"><div class="th"><img src="assets/photos/sneakers-bw.jpg" style="object-position:50% 50%" alt="" /></div><div class="nm">Baskets noires semelle blanche</div><div class="sb">Prix à demander · ajouté aujourd'hui</div><div class="rt">Retirer</div></div>
+          <div class="abs it" id="it5" style="top:840px"><div class="th"><img src="assets/photos/hp-grado.jpg" style="object-position:50% 50%" alt="" /></div><div class="nm">Casque audio filaire noir</div><div class="sb">Prix à demander · ajouté aujourd'hui</div><div class="rt">Retirer</div></div>
+      </div>
+      <div class="scr" id="s-pick">
+        <div class="abs b" style="left:16px;top:16px;font-size:16px">Tes photos</div>
+        <div class="abs b" style="left:250px;top:18px;width:124px;text-align:right;font-size:13px;color:#c8432f"><span id="pk-n">0</span> / 60</div>
+        <div id="pk-grid" class="abs" style="left:0;top:56px;width:390px;height:600px">
+            <div class="gc" style="left:0px;top:0px"><img src="assets/photos/costume.jpg" style="object-position:50% 50%" alt="" /><i id="ck0">1</i></div>
+            <div class="gc" style="left:98px;top:0px"><img src="assets/photos/robe.jpg" style="object-position:50% 25%" alt="" /><i id="ck1">2</i></div>
+            <div class="gc" style="left:196px;top:0px"><img src="assets/photos/sac.jpg" style="object-position:50% 50%" alt="" /><i id="ck2">3</i></div>
+            <div class="gc" style="left:294px;top:0px"><img src="assets/photos/hub.jpg" style="object-position:50% 50%" alt="" /><i id="ck3">4</i></div>
+            <div class="gc" style="left:0px;top:98px"><img src="assets/photos/sneakers-bw.jpg" style="object-position:50% 50%" alt="" /><i id="ck4">5</i></div>
+            <div class="gc" style="left:98px;top:98px"><img src="assets/photos/hp-grado.jpg" style="object-position:50% 50%" alt="" /><i id="ck5">6</i></div>
+            <div class="gc" style="left:196px;top:98px"><img src="assets/photos/phone-hand.jpg" style="object-position:50% 50%" alt="" /><i id="ck6">7</i></div>
+            <div class="gc" style="left:294px;top:98px"><img src="assets/photos/sneakers-asphalt.jpg" style="object-position:50% 50%" alt="" /><i id="ck7">8</i></div>
+            <div class="gc" style="left:0px;top:196px"><img src="assets/photos/hp-music.jpg" style="object-position:50% 50%" alt="" /><i id="ck8">9</i></div>
+            <div class="gc" style="left:98px;top:196px"><img src="assets/photos/hp-phone.jpg" style="object-position:50% 50%" alt="" /><i id="ck9">10</i></div>
+            <div class="gc" style="left:196px;top:196px"><img src="assets/photos/robe.jpg" style="object-position:50% 25%" alt="" /><i id="ck10">11</i></div>
+            <div class="gc" style="left:294px;top:196px"><img src="assets/photos/costume.jpg" style="object-position:50% 50%" alt="" /><i id="ck11">12</i></div>
+            <div class="gc" style="left:0px;top:294px"><img src="assets/photos/sac.jpg" style="object-position:50% 50%" alt="" /><i id="ck12">13</i></div>
+            <div class="gc" style="left:98px;top:294px"><img src="assets/photos/hub.jpg" style="object-position:50% 50%" alt="" /><i id="ck13">14</i></div>
+            <div class="gc" style="left:196px;top:294px"><img src="assets/photos/hp-grado.jpg" style="object-position:50% 50%" alt="" /><i id="ck14">15</i></div>
+            <div class="gc" style="left:294px;top:294px"><img src="assets/photos/sneakers-bw.jpg" style="object-position:50% 50%" alt="" /><i id="ck15">16</i></div>
+            <div class="gc" style="left:0px;top:392px"><img src="assets/photos/phone-hand.jpg" style="object-position:50% 50%" alt="" /><i id="ck16">17</i></div>
+            <div class="gc" style="left:98px;top:392px"><img src="assets/photos/hp-music.jpg" style="object-position:50% 50%" alt="" /><i id="ck17">18</i></div>
+            <div class="gc" style="left:196px;top:392px"><img src="assets/photos/costume.jpg" style="object-position:50% 50%" alt="" /><i id="ck18">19</i></div>
+            <div class="gc" style="left:294px;top:392px"><img src="assets/photos/robe.jpg" style="object-position:50% 25%" alt="" /><i id="ck19">20</i></div>
+            <div class="gc" style="left:0px;top:490px"><img src="assets/photos/sac.jpg" style="object-position:50% 50%" alt="" /><i id="ck20">21</i></div>
+            <div class="gc" style="left:98px;top:490px"><img src="assets/photos/hub.jpg" style="object-position:50% 50%" alt="" /><i id="ck21">22</i></div>
+            <div class="gc" style="left:196px;top:490px"><img src="assets/photos/sneakers-asphalt.jpg" style="object-position:50% 50%" alt="" /><i id="ck22">23</i></div>
+            <div class="gc" style="left:294px;top:490px"><img src="assets/photos/hp-phone.jpg" style="object-position:50% 50%" alt="" /><i id="ck23">24</i></div>
+        </div>
+        <div class="abs" style="left:0;top:740px;width:390px;height:104px;background:#fff;border-top:1px solid #eee"></div>
+        <div id="pk-btn" class="abs b" style="left:16px;top:762px;width:358px;height:50px;border-radius:25px;background:#e45846;color:#fff;font-size:15px;display:flex;align-items:center;justify-content:center">Ajouter 60 produits</div>
+      </div>
+      <div class="finger" id="sl-f"></div>
+    </div></div>
+    <div class="scrim"></div>
+    <div id="sl-t1" class="tt clip" data-start="0.3" data-duration="3.4" data-track-index="1"><span class="h"><span class="w acc">60</span> <span class="w">photos.</span></span><span class="h"><span class="w">D'un</span> <span class="w">coup.</span></span></div>
+    <div id="sl-t2" class="tt clip" data-start="4.0" data-duration="3.6" data-track-index="2"><span class="h"><span class="w">En</span> <span class="w acc">ligne.</span></span><span class="h"><span class="w">En</span> <span class="w">un</span> <span class="w">geste.</span></span></div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: g || 0.08, ease: "power4.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      function tap(f, at, sx, sy) {
+        tl.set(f, { x: sx, y: sy }, at - 0.3);
+        tl.fromTo(f, { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, at - 0.3);
+        tl.to(f, { scale: 0.78, duration: 0.08, ease: "power2.in" }, at - 0.04);
+        tl.to(f, { scale: 1, opacity: 0, duration: 0.22, ease: "power2.out" }, at + 0.06);
+      }
+
+      gsap.set("#s-pick", { opacity: 0 });
+      words("#sl-t1", 0.3, 0.1);
+      tl.fromTo("#sl-ph", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, 0);
+      tap("#sl-f", 0.9, 195, 278);
+      tl.to("#sl-drop", { scale: 0.97, duration: 0.08 }, 0.86);
+      tl.to("#sl-drop", { scale: 1, duration: 0.15 }, 0.95);
+      tl.set("#s-pick", { opacity: 1 }, 1.0);
+      tl.fromTo("#s-pick", { y: 844 }, { y: 0, duration: 0.35, ease: "power3.out" }, 1.0);
+      // photos get ticked one after another; the counter runs to 60
+      for (var i = 0; i < 24; i++) tl.fromTo("#ck" + i, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, 1.4 + i * 0.07);
+      tl.to("#pk-grid", { y: -150, duration: 1.8, ease: "power1.inOut" }, 1.5);
+      var cnt = { v: 0 };
+      var pkn = document.getElementById("pk-n");
+      tl.to(cnt, { v: 60, duration: 1.9, ease: "power1.in", onUpdate: function () { pkn.textContent = Math.round(cnt.v); } }, 1.4);
+      tap("#sl-f", 3.55, 195, 787);
+      out("#sl-t1", 3.65);
+      tl.to("#s-pick", { y: 844, duration: 0.35, ease: "power3.in" }, 3.65);
+      // the shop fills
+      var cnt2 = { v: 0 };
+      var sln = document.getElementById("sl-n");
+      tl.to(cnt2, { v: 60, duration: 1.4, ease: "power2.out", onUpdate: function () { sln.textContent = Math.round(cnt2.v); } }, 3.95);
+      for (var k = 0; k < 6; k++) tl.fromTo("#it" + k, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, 4.0 + k * 0.12);
+      words("#sl-t2", 4.0, 0.1);
+      out("#sl-t2", 7.45);
+      tl.to("#sl-ph", { y: -80, opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 7.6);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["sell"] = tl;
+    })();
+  </script>
+</template>

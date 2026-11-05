@@ -1,0 +1,48 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    .ph { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    .sc { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .finger { position: absolute; left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
+    .tt { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; white-space: nowrap; }
+    .tt .h { display: block; font-weight: 700; font-size: 94px; line-height: 1.04; letter-spacing: -0.03em; color: #1b1b1b; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 72%, rgba(255,255,255,0) 100%); }
+    .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+
+
+    #fr-bg { position: absolute; inset: 0; background: #e45846; }
+    #fr-h { position: absolute; left: 0; width: 1080px; top: 640px; text-align: center; color: #fff; font-weight: 700; font-size: 220px; letter-spacing: -0.04em; }
+    #fr-s { position: absolute; left: 110px; width: 860px; top: 920px; text-align: center; color: #fff; font-weight: 500; font-size: 46px; line-height: 1.35; }
+
+  </style>
+  <div id="root" data-composition-id="free" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="fr-bg"></div>
+    <div id="fr-h" class="clip" data-start="0.15" data-duration="2.3" data-track-index="1"><span class="w">Gratuit.</span></div>
+    <div id="fr-s" class="clip" data-start="0.55" data-duration="1.9" data-track-index="2"><span class="w">Ton</span> <span class="w">numéro</span> <span class="w">n'est</span> <span class="w">montré</span> <span class="w">qu'aux</span> <span class="w">acheteurs</span> <span class="w">qui</span> <span class="w">cherchent</span> <span class="w">ce</span> <span class="w">produit.</span></div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: g || 0.08, ease: "power4.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      function tap(f, at, sx, sy) {
+        tl.set(f, { x: sx, y: sy }, at - 0.3);
+        tl.fromTo(f, { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, at - 0.3);
+        tl.to(f, { scale: 0.78, duration: 0.08, ease: "power2.in" }, at - 0.04);
+        tl.to(f, { scale: 1, opacity: 0, duration: 0.22, ease: "power2.out" }, at + 0.06);
+      }
+
+      tl.fromTo("#fr-bg", { clipPath: "circle(0px at 540px 960px)" }, { clipPath: "circle(2300px at 540px 960px)", duration: 0.4, ease: "power2.inOut" }, 0);
+      tl.fromTo("#fr-h .w", { opacity: 0, scale: 1.25, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, 0.15);
+      words("#fr-s", 0.55, 0.05);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["free"] = tl;
+    })();
+  </script>
+</template>

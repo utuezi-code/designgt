@@ -1,0 +1,86 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    .ph { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    .sc { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .finger { position: absolute; left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
+    .tt { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; white-space: nowrap; }
+    .tt .h { display: block; font-weight: 700; font-size: 94px; line-height: 1.04; letter-spacing: -0.03em; color: #1b1b1b; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 72%, rgba(255,255,255,0) 100%); }
+    .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+
+
+    .card { left: 0; width: 390px; height: 106px; }
+    .av { left: 9px; top: 0; width: 56px; height: 56px; border-radius: 9px; background: #fcede8; color: #c8432f; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+    .lock { background: linear-gradient(180deg, #3b2a2a 0%, #7a3b2e 55%, #e45846 100%); }
+    .nt { position: absolute; left: 12px; width: 366px; padding: 12px 14px; border-radius: 20px; background: rgba(255,255,255,0.92); box-shadow: 0 8px 20px rgba(0,0,0,0.2); opacity: 0; }
+    .nt .ic { position: absolute; left: 14px; top: 13px; width: 30px; height: 30px; border-radius: 8px; background: #25d366; }
+    .nt .ap { position: absolute; left: 54px; top: 10px; font-size: 11px; color: #555; }
+    .nt .tm { position: absolute; right: 14px; top: 10px; font-size: 11px; color: #777; }
+    .nt .ti { margin-left: 42px; margin-top: 14px; font-weight: 700; font-size: 13.5px; }
+    .nt .bd { margin-left: 42px; font-size: 13px; line-height: 1.35; color: #222; }
+
+  </style>
+  <div id="root" data-composition-id="notify" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div class="bg"></div>
+    <div class="ph" id="nt-ph"><div class="sc" data-layout-allow-occlusion data-layout-ignore>
+      <div class="scr" id="s-found">
+        <div class="abs b" style="left:14px;top:12px;font-size:18px">‹</div>
+        <div class="abs b" style="left:34px;top:13px;font-size:16px">Résultats</div>
+        <div class="abs pill" style="left:268px;top:11px"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 22s7-7 7-12a7 7 0 1 0-14 0c0 5 7 12 7 12z" fill="none" stroke="#c8432f" stroke-width="2.4"/><circle cx="12" cy="10" r="2.5" fill="#c8432f"/></svg>Autour de moi</div>
+        <div class="abs" style="left:0;top:46px;width:390px;height:1px;background:#ececec"></div>
+        <div class="abs" style="left:9px;top:50px;width:40px;height:40px;border-radius:9px;overflow:hidden"><img src="assets/photos/costume.jpg" style="width:40px;height:40px" alt="" /></div>
+        <div class="abs b" style="left:57px;top:50px;font-size:15px">Costume homme 2 pièces</div>
+        <div class="abs b" style="left:57px;top:72px;font-size:12px;color:#c8432f">✎ Pas ça ?</div>
+        <div class="abs" style="left:0;top:104px;width:390px;height:1px;background:#ececec"></div>
+        <div class="abs b" style="left:14px;top:113px;font-size:15px">1 offre</div>
+        <div class="abs" style="left:0;top:138px;width:390px;height:1px;background:#ececec"></div>
+        <div class="abs card" id="nt-card" style="top:148px"><div class="abs" style="left:9px;top:0;width:56px;height:56px;border-radius:9px;overflow:hidden"><img src="assets/photos/costume.jpg" style="width:56px;height:56px" alt="" /></div><div class="abs b" style="left:74px;top:-2px;font-size:19px">Prix à demander</div><div class="abs" style="left:74px;top:25px;font-size:12px">Costume homme 2 pièces croisé gris</div><div class="abs b" style="left:74px;top:41px;font-size:14px">Boutique Awa</div><div class="abs" style="left:74px;top:61px;font-size:11px;color:#555">À 400 m · Angré</div><div class="abs b" style="left:9px;top:78px;width:372px;height:26px;border-radius:13px;background:#fcede8;color:#a8361f;font-size:12px;display:flex;align-items:center;justify-content:center">Contacter sur WhatsApp</div></div>
+      </div>
+      <div class="scr lock" id="s-lock">
+        <div class="abs" style="left:0;top:90px;width:390px;text-align:center;color:#fff;font-size:16px;font-weight:600">Aujourd'hui</div>
+        <div class="abs" style="left:0;top:110px;width:390px;text-align:center;color:#fff;font-size:76px;font-weight:600;letter-spacing:-0.02em">10:42</div>
+        <div class="nt" id="n0" style="top:300px"><div class="ic"></div><div class="ap">WHATSAPP</div><div class="tm">maintenant</div><div class="ti">+225 07 •• •• •• ••</div><div class="bd">Bonjour ! Je vous ai trouvée sur Trouvaille. Le costume gris est encore disponible ?</div></div>
+        <div class="nt" id="n1" style="top:420px"><div class="ic"></div><div class="ap">WHATSAPP</div><div class="tm">maintenant</div><div class="ti">+225 05 •• •• •• ••</div><div class="bd">Bonsoir, vous avez le sac à dos noir ?</div></div>
+        <div class="nt" id="n2" style="top:520px"><div class="ic"></div><div class="ap">WHATSAPP</div><div class="tm">maintenant</div><div class="ti">+225 01 •• •• •• ••</div><div class="bd">La robe en wax, c'est quel prix ?</div></div>
+      </div>
+      <div class="finger" id="nt-f"></div>
+    </div></div>
+    <div class="scrim"></div>
+    <div id="nt-t1" class="tt clip" data-start="0.2" data-duration="1.75" data-track-index="1"><span class="h"><span class="w">Le</span> <span class="w">client</span></span><span class="h"><span class="w acc">te</span> <span class="w acc">trouve.</span></span></div>
+    <div id="nt-t2" class="tt clip" data-start="2.1" data-duration="2.85" data-track-index="2"><span class="h"><span class="w">Et</span> <span class="w">il</span></span><span class="h"><span class="w acc">t'écrit.</span></span></div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: g || 0.08, ease: "power4.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      function tap(f, at, sx, sy) {
+        tl.set(f, { x: sx, y: sy }, at - 0.3);
+        tl.fromTo(f, { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, at - 0.3);
+        tl.to(f, { scale: 0.78, duration: 0.08, ease: "power2.in" }, at - 0.04);
+        tl.to(f, { scale: 1, opacity: 0, duration: 0.22, ease: "power2.out" }, at + 0.06);
+      }
+
+      gsap.set("#s-lock", { opacity: 0 });
+      tl.fromTo("#nt-ph", { y: 1300 }, { y: 0, duration: 0.55, ease: "expo.out" }, 0);
+      tl.fromTo("#nt-card", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 0.45);
+      words("#nt-t1", 0.2, 0.09);
+      tap("#nt-f", 1.55, 195, 239);
+      out("#nt-t1", 1.85);
+      tl.set("#s-lock", { opacity: 1 }, 1.95);
+      tl.fromTo("#s-lock", { clipPath: "circle(0px at 195px 239px)" }, { clipPath: "circle(900px at 195px 239px)", duration: 0.4, ease: "power3.inOut" }, 1.95);
+      words("#nt-t2", 2.1, 0.1);
+      ["#n0", "#n1", "#n2"].forEach(function (n, i) { tl.fromTo(n, { opacity: 0, y: -40, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 2.4 + i * 0.6); });
+      out("#nt-t2", 4.8);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["notify"] = tl;
+    })();
+  </script>
+</template>

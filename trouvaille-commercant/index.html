@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Poppins", sans-serif; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32.15" data-width="1080" data-height="1920">
+      <div id="shelf" data-composition-id="shelf" data-composition-src="compositions/shelf.html" data-start="0" data-duration="2.7" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <div id="search" data-composition-id="search" data-composition-src="compositions/search.html" data-start="2.6" data-duration="2.95" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 2"></div>
+      <div id="reveal" data-composition-id="reveal" data-composition-src="compositions/reveal.html" data-start="5.45" data-duration="2.1" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 3"></div>
+      <div id="sell" data-composition-id="sell" data-composition-src="compositions/sell.html" data-start="7.45" data-duration="8.0" data-track-index="4" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 4"></div>
+      <div id="map" data-composition-id="map" data-composition-src="compositions/map.html" data-start="15.35" data-duration="5.5" data-track-index="5" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 5"></div>
+      <div id="notify" data-composition-id="notify" data-composition-src="compositions/notify.html" data-start="20.75" data-duration="5.1" data-track-index="6" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 6"></div>
+      <div id="free" data-composition-id="free" data-composition-src="compositions/free.html" data-start="25.75" data-duration="2.5" data-track-index="7" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 7"></div>
+      <div id="endcard" data-composition-id="endcard" data-composition-src="compositions/endcard.html" data-start="28.15" data-duration="4.0" data-track-index="8" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 8"></div>
+      <audio id="bgm" class="clip" src="assets/audio/ludo-afro-reggae.mp3" data-start="0" data-duration="32.15" data-media-start="0.105" data-track-index="10" data-volume="0.7" data-fade-out="1.6"></audio>
+      <audio id="sfx-grid" class="clip" src="assets/sfx/whoosh-b.mp3" data-start="0" data-track-index="11" data-volume="0.35"></audio>
+      <audio id="sfx-empty" class="clip" src="assets/sfx/whoosh-a.mp3" data-start="1.684" data-track-index="12" data-volume="0.35"></audio>
+      <audio id="sfx-phone1" class="clip" src="assets/sfx/whoosh-b.mp3" data-start="2.578" data-track-index="13" data-volume="0.35"></audio>
+      <audio id="sfx-coral" class="clip" src="assets/sfx/whoosh-a.mp3" data-start="4.834" data-track-index="14" data-volume="0.4"></audio>
+      <audio id="sfx-tapcard" class="clip" src="assets/sfx/tap.mp3" data-start="6.462" data-track-index="15" data-volume="2.5"></audio>
+      <audio id="sfx-through" class="clip" src="assets/sfx/whoosh-a.mp3" data-start="6.184" data-track-index="16" data-volume="0.45"></audio>
+      <audio id="sfx-tapdrop" class="clip" src="assets/sfx/tap.mp3" data-start="8.162" data-track-index="17" data-volume="2.5"></audio>
+      <audio id="sfx-ticks" class="clip" src="assets/sfx/pop.mp3" data-start="8.778" data-track-index="18" data-volume="0.35"></audio>
+      <audio id="sfx-ticks2" class="clip" src="assets/sfx/pop.mp3" data-start="9.828" data-track-index="19" data-volume="0.35"></audio>
+      <audio id="sfx-add" class="clip" src="assets/sfx/tap.mp3" data-start="10.812" data-track-index="20" data-volume="2.5"></audio>
+      <audio id="sfx-fill" class="clip" src="assets/sfx/pop.mp3" data-start="11.378" data-track-index="21" data-volume="0.45"></audio>
+      <audio id="sfx-map" class="clip" src="assets/sfx/whoosh-a.mp3" data-start="14.734" data-track-index="22" data-volume="0.4"></audio>
+      <audio id="sfx-shop" class="clip" src="assets/sfx/pop.mp3" data-start="17.878" data-track-index="23" data-volume="0.55"></audio>
+      <audio id="sfx-buyers" class="clip" src="assets/sfx/pop.mp3" data-start="18.378" data-track-index="24" data-volume="0.4"></audio>
+      <audio id="sfx-phone2" class="clip" src="assets/sfx/whoosh-b.mp3" data-start="20.728" data-track-index="25" data-volume="0.35"></audio>
+      <audio id="sfx-tapwa" class="clip" src="assets/sfx/tap.mp3" data-start="22.112" data-track-index="26" data-volume="2.5"></audio>
+      <audio id="sfx-n0" class="clip" src="assets/sfx/message.mp3" data-start="23.038" data-track-index="27" data-volume="0.6"></audio>
+      <audio id="sfx-n1" class="clip" src="assets/sfx/message.mp3" data-start="23.638" data-track-index="28" data-volume="0.6"></audio>
+      <audio id="sfx-n2" class="clip" src="assets/sfx/message.mp3" data-start="24.238" data-track-index="29" data-volume="0.6"></audio>
+      <audio id="sfx-free" class="clip" src="assets/sfx/impact.mp3" data-start="25.178" data-track-index="30" data-volume="0.5"></audio>
+      <audio id="sfx-end" class="clip" src="assets/sfx/pop.mp3" data-start="28.128" data-track-index="31" data-volume="0.55"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

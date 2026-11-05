@@ -31,3 +31,9 @@ trouvaille-robe/.hyperframes/artifacts/
 trouvaille-robe/.hyperframes/preview/
 trouvaille-robe/.hyperframes/*-lock/
 trouvaille-robe/.media/
+trouvaille-commercant/renders/work-*/
+trouvaille-commercant/renders/.*
+trouvaille-commercant/.hyperframes/artifacts/
+trouvaille-commercant/.hyperframes/preview/
+trouvaille-commercant/.hyperframes/*-lock/
+trouvaille-commercant/.media/

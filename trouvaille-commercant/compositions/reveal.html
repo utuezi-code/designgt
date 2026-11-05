@@ -1,0 +1,59 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    .ph { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    .sc { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .finger { position: absolute; left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
+    .tt { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; white-space: nowrap; }
+    .tt .h { display: block; font-weight: 700; font-size: 94px; line-height: 1.04; letter-spacing: -0.03em; color: #1b1b1b; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 72%, rgba(255,255,255,0) 100%); }
+    .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+
+    #rv-coral { position: absolute; inset: 0; background: #e45846; }
+    #rv-card { position: absolute; left: 90px; top: 760px; width: 900px; height: 230px; border-radius: 40px; background: #fcede8; box-shadow: 0 30px 60px rgba(110,25,10,0.3); }
+    #rv-card .ic { position: absolute; left: 50px; top: 55px; width: 120px; height: 120px; border-radius: 30px; background: #e45846; }
+    #rv-card .t1 { position: absolute; left: 210px; top: 52px; font-weight: 700; font-size: 58px; color: #1b1b1b; }
+    #rv-card .t2 { position: absolute; left: 210px; top: 136px; font-weight: 500; font-size: 31px; color: #555; white-space: nowrap; }
+    #rv-q { position: absolute; left: 0; width: 1080px; top: 330px; text-align: center; color: #fff; font-weight: 700; font-size: 96px; letter-spacing: -0.03em; line-height: 1.05; }
+    #rv-white { position: absolute; inset: 0; background: #fff; }
+
+  </style>
+  <div id="root" data-composition-id="reveal" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="rv-coral"></div>
+    <div id="rv-q" class="clip" data-start="0.05" data-duration="1.55" data-track-index="1"><span class="w">Rends-la</span><br /><span class="w">visible.</span></div>
+    <div id="rv-card"><div class="ic"><svg viewBox="0 0 24 24" style="position:absolute;left:24px;top:24px;width:72px;height:72px"><path d="M4 10h16v10H4z M3 6l2-3h14l2 3v3H3z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="#fff" stroke-width="2"/></svg></div><div class="t1">Tu es commerçant ?</div><div class="t2">Mets tes produits en ligne, c'est gratuit</div></div>
+    <div class="finger" id="rv-f"></div>
+    <div id="rv-white-clip" class="clip" data-start="1.45" data-duration="0.65" data-track-index="2" style="position:absolute;inset:0"><div id="rv-white"></div></div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: g || 0.08, ease: "power4.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      function tap(f, at, sx, sy) {
+        tl.set(f, { x: sx, y: sy }, at - 0.3);
+        tl.fromTo(f, { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, at - 0.3);
+        tl.to(f, { scale: 0.78, duration: 0.08, ease: "power2.in" }, at - 0.04);
+        tl.to(f, { scale: 1, opacity: 0, duration: 0.22, ease: "power2.out" }, at + 0.06);
+      }
+
+      tl.fromTo("#rv-coral", { clipPath: "circle(0px at 540px 960px)" }, { clipPath: "circle(2300px at 540px 960px)", duration: 0.4, ease: "power2.inOut" }, 0);
+      words("#rv-q", 0.1, 0.12);
+      tl.fromTo("#rv-card", { y: 500, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.55, ease: "back.out(1.5)" }, 0.25);
+      tap("#rv-f", 1.2, 640, 875);
+      tl.to("#rv-card", { scale: 0.96, duration: 0.08 }, 1.16);
+      // zoom through the card into the app
+      out("#rv-q", 1.25);
+      tl.to("#rv-card", { scale: 9, duration: 0.55, ease: "power3.in", transformOrigin: "50% 50%" }, 1.3);
+      tl.fromTo("#rv-white", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 1.6);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["reveal"] = tl;
+    })();
+  </script>
+</template>

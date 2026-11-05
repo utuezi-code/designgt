@@ -1,0 +1,62 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    .ph { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    .sc { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .finger { position: absolute; left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
+    .tt { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; white-space: nowrap; }
+    .tt .h { display: block; font-weight: 700; font-size: 94px; line-height: 1.04; letter-spacing: -0.03em; color: #1b1b1b; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 72%, rgba(255,255,255,0) 100%); }
+    .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+
+  </style>
+  <div id="root" data-composition-id="search" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div class="bg"></div>
+    <div class="ph" id="se-ph"><div class="sc" data-layout-allow-occlusion data-layout-ignore>
+      <div class="scr">
+        <div class="abs b" style="left:14px;top:12px;font-size:18px">‹</div>
+        <div class="abs b" style="left:34px;top:13px;font-size:16px">Résultats</div>
+        <div class="abs pill" style="left:268px;top:11px"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 22s7-7 7-12a7 7 0 1 0-14 0c0 5 7 12 7 12z" fill="none" stroke="#c8432f" stroke-width="2.4"/><circle cx="12" cy="10" r="2.5" fill="#c8432f"/></svg>Autour de moi</div>
+        <div class="abs" style="left:0;top:46px;width:390px;height:1px;background:#ececec"></div>
+        <div class="abs" style="left:9px;top:50px;width:40px;height:40px;border-radius:9px;overflow:hidden"><img src="assets/photos/costume.jpg" style="width:40px;height:40px" alt="" /></div>
+        <div class="abs b" style="left:57px;top:50px;font-size:15px">Costume homme 2 pièces</div>
+        <div class="abs b" style="left:57px;top:72px;font-size:12px;color:#c8432f">✎ Pas ça ?</div>
+        <div class="abs" style="left:0;top:104px;width:390px;height:1px;background:#ececec"></div>
+        <div id="se-empty" class="abs" style="left:30px;top:200px;width:330px;text-align:center">
+          <div class="b" style="font-size:17px">Aucune offre trouvée</div>
+          <div style="margin-top:8px;font-size:12.5px;color:#555;line-height:1.45">Personne ne propose ce produit à moins de 40 km dans notre liste.</div>
+        </div>
+        <div class="abs" style="left:0;top:604px;width:390px;text-align:center;font-size:10.5px;color:#555">Prix indicatifs : le prix final se discute avec le vendeur.</div>
+      </div>
+    </div></div>
+    <div class="scrim"></div>
+    <div id="se-t" class="tt clip" data-start="0.2" data-duration="2.55" data-track-index="1"><span class="h"><span class="w">Mais</span> <span class="w">en</span> <span class="w">ligne,</span></span><span class="h"><span class="w">personne</span> <span class="w">ne</span> <span class="w acc">te</span> <span class="w acc">trouve.</span></span></div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: g || 0.08, ease: "power4.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      function tap(f, at, sx, sy) {
+        tl.set(f, { x: sx, y: sy }, at - 0.3);
+        tl.fromTo(f, { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, at - 0.3);
+        tl.to(f, { scale: 0.78, duration: 0.08, ease: "power2.in" }, at - 0.04);
+        tl.to(f, { scale: 1, opacity: 0, duration: 0.22, ease: "power2.out" }, at + 0.06);
+      }
+
+      tl.fromTo("#se-ph", { y: 1300 }, { y: 0, duration: 0.6, ease: "expo.out" }, 0);
+      tl.fromTo("#se-empty", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.7);
+      words("#se-t", 0.25, 0.09);
+      out("#se-t", 2.55);
+      tl.to("#se-ph", { y: -60, opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 2.6);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["search"] = tl;
+    })();
+  </script>
+</template>

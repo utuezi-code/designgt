@@ -1,0 +1,68 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #ffffff; font-family: "Poppins", sans-serif; color: #1b1b1b; }
+    .ph { position: absolute; left: 230px; top: 480px; width: 620px; height: 1309px; border-radius: 86px; background: #141414; box-shadow: 0 40px 90px rgba(120, 40, 25, 0.25); }
+    .sc { position: absolute; left: 14px; top: 14px; width: 390px; height: 844px; transform: scale(1.518); transform-origin: 0 0; border-radius: 48px; overflow: hidden; background: #fff; }
+    .scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+    .abs { position: absolute; }
+    .b { font-weight: 700; }
+    .pill { border-radius: 999px; background: #efeeec; font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 5px; padding: 0 11px; height: 26px; }
+    .finger { position: absolute; left: 0; top: 0; width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; border-radius: 50%; background: rgba(27,27,27,0.32); border: 3px solid #fff; opacity: 0; }
+    .tt { position: absolute; left: 0; width: 1080px; top: 190px; text-align: center; white-space: nowrap; }
+    .tt .h { display: block; font-weight: 700; font-size: 94px; line-height: 1.04; letter-spacing: -0.03em; color: #1b1b1b; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #c8432f; }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 72%, rgba(255,255,255,0) 100%); }
+    .bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 55% at 50% 62%, #fde9e3 0%, #ffffff 75%); }
+
+    .cell { position: absolute; width: 350px; height: 376px; border-radius: 22px; overflow: hidden; background: #eee; }
+    .cell img { position: absolute; left: 0; top: 0; width: 350px; height: 376px; object-fit: cover; }
+    #sh-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.25) 40%, rgba(10,10,10,0) 60%); }
+    #sh-t { position: absolute; left: 0; width: 1080px; top: 200px; text-align: center; color: #fff; font-weight: 700; font-size: 108px; line-height: 1.04; letter-spacing: -0.03em; }
+    #sh-grid { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+
+  </style>
+  <div id="root" data-composition-id="shelf" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="sh-grid">
+    <div class="cell" id="c0" style="left:8px;top:8px"><img src="assets/photos/costume.jpg" style="object-position:50% 30%" alt="" /></div>
+    <div class="cell" id="c1" style="left:366px;top:8px"><img src="assets/photos/robe.jpg" style="object-position:50% 30%" alt="" /></div>
+    <div class="cell" id="c2" style="left:724px;top:8px"><img src="assets/photos/sneakers-bw.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c3" style="left:8px;top:392px"><img src="assets/photos/hp-red-man.jpg" style="object-position:50% 30%" alt="" /></div>
+    <div class="cell" id="c4" style="left:366px;top:392px"><img src="assets/photos/sac.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c5" style="left:724px;top:392px"><img src="assets/photos/hp-grado.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c6" style="left:8px;top:776px"><img src="assets/photos/phone-hand.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c7" style="left:366px;top:776px"><img src="assets/photos/sneakers-asphalt.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c8" style="left:724px;top:776px"><img src="assets/photos/hub.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c9" style="left:8px;top:1160px"><img src="assets/photos/hp-music.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c10" style="left:366px;top:1160px"><img src="assets/photos/hp-phone.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c11" style="left:724px;top:1160px"><img src="assets/photos/robe.jpg" style="object-position:50% 30%" alt="" /></div>
+    <div class="cell" id="c12" style="left:8px;top:1544px"><img src="assets/photos/costume.jpg" style="object-position:50% 30%" alt="" /></div>
+    <div class="cell" id="c13" style="left:366px;top:1544px"><img src="assets/photos/sac.jpg" style="object-position:50% 50%" alt="" /></div>
+    <div class="cell" id="c14" style="left:724px;top:1544px"><img src="assets/photos/sneakers-bw.jpg" style="object-position:50% 50%" alt="" /></div>
+    </div>
+    <div id="sh-veil"></div>
+    <div id="sh-t" class="clip" data-start="0" data-duration="2.6" data-track-index="1"><span class="w">Ta</span> <span class="w">boutique</span><br /><span class="w">est</span> <span class="w acc" style="color:#ff8a72">pleine.</span></div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: g || 0.08, ease: "power4.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      function tap(f, at, sx, sy) {
+        tl.set(f, { x: sx, y: sy }, at - 0.3);
+        tl.fromTo(f, { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power3.out" }, at - 0.3);
+        tl.to(f, { scale: 0.78, duration: 0.08, ease: "power2.in" }, at - 0.04);
+        tl.to(f, { scale: 1, opacity: 0, duration: 0.22, ease: "power2.out" }, at + 0.06);
+      }
+
+      for (var i = 0; i < 15; i++) tl.fromTo("#c" + i, { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, (i % 3) * 0.05 + Math.floor(i / 3) * 0.07);
+      tl.fromTo("#sh-grid", { scale: 1.08, transformOrigin: "50% 40%" }, { scale: 1.0, duration: 2.6, ease: "power1.out" }, 0);
+      words("#sh-t", 0.2, 0.12);
+      // the shelf empties: online, nothing shows
+      for (var j = 0; j < 15; j++) tl.to("#c" + j, { scale: 0.2, opacity: 0, duration: 0.3, ease: "power3.in" }, 2.25 + ((j * 7) % 15) * 0.012);
+      out("#sh-t", 2.3);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["shelf"] = tl;
+    })();
+  </script>
+</template>
