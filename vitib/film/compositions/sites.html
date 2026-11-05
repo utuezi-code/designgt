@@ -1,0 +1,52 @@
+<template>
+  <style>
+    @font-face { font-family: "Proxima Nova"; font-weight: 600; src: url("assets/fonts/ProximaNova-Semibold.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 700; src: url("assets/fonts/ProximaNova-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Proxima Nova", sans-serif; }
+    .sh { position: absolute; inset: 0; overflow: hidden; background: #1a2b56; }
+    .sh img { position: absolute; left: 0; top: -2px; width: 1920px; height: 1083px; }
+    .top { position: absolute; left: 0; top: 0; width: 1920px; height: 360px; background: linear-gradient(180deg, rgba(10,18,40,0.62) 0%, rgba(10,18,40,0) 100%); }
+    .lab { position: absolute; left: 120px; top: 84px; color: #fff; white-space: nowrap; }
+    .lab .z { display: block; font-weight: 700; font-size: 96px; letter-spacing: -0.015em; line-height: 1; }
+    .lab .z i { font-style: normal; color: #ed6d0c; }
+    .lab .s { display: block; margin-top: 12px; font-weight: 600; font-size: 34px; opacity: 0.95; }
+    .w { display: inline-block; opacity: 0; }
+    #st-note { position: absolute; right: 120px; bottom: 64px; padding: 8px 18px; border-radius: 10px; background: rgba(10,18,40,0.55); color: #fff; font-weight: 600; font-size: 28px; }
+  </style>
+  <div id="root" data-composition-id="sites" data-width="1920" data-height="1080" data-layout-allow-overflow data-layout-allow-overlap>
+    <div class="sh" id="sh-a"><img src="assets/site/zone-a.jpg" alt="Vue aérienne de la zone A du VITIB" /><div class="top"></div></div>
+    <div class="sh" id="sh-b"><img src="assets/site/zone-b.jpg" alt="Vue aérienne de la zone B du VITIB" /><div class="top"></div></div>
+    <div class="sh" id="sh-c"><img src="assets/site/zone-c.jpg" alt="Vue aérienne de la zone C du VITIB" /><div class="top"></div></div>
+    <div id="lb-a" class="lab clip" data-start="0.15" data-duration="1.85" data-track-index="1"><span class="z"><span class="w">Zone</span> <span class="w"><i>A</i></span></span><span class="s"><span class="w">Le</span> <span class="w">site</span> <span class="w">aujourd'hui</span></span></div>
+    <div id="lb-b" class="lab clip" data-start="2.05" data-duration="1.85" data-track-index="2"><span class="z"><span class="w">Zone</span> <span class="w"><i>B</i></span></span><span class="s"><span class="w">Grand-Bassam</span></span></div>
+    <div id="lb-c" class="lab clip" data-start="3.95" data-duration="1.75" data-track-index="3"><span class="z"><span class="w">Zone</span> <span class="w"><i>C</i></span></span><span class="s"><span class="w">624</span> <span class="w">ha</span> <span class="w">·</span> <span class="w">3</span> <span class="w">zones</span></span></div>
+    <div id="st-note" class="clip" data-start="0.1" data-duration="5.6" data-track-index="4" data-layout-ignore>Images réelles du site</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at) { tl.fromTo(sel + " .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.07, ease: "power4.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.14, stagger: 0.02, ease: "power2.in" }, at); }
+      gsap.set("#sh-b, #sh-c", { x: 1920 });
+      // A: the highway in the foreground continues the arrival
+      tl.fromTo("#sh-a", { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.45, ease: "power3.out" }, 0);
+      tl.fromTo("#sh-a img", { scale: 1.16, filter: "blur(8px)", transformOrigin: "50% 90%" }, { scale: 1.02, filter: "blur(0px)", duration: 2.2, ease: "power2.out" }, 0);
+      words("#lb-a", 0.2);
+      out("#lb-a", 1.85);
+      // B: whip in from the right
+      tl.fromTo("#sh-b", { x: 1920 }, { x: 0, duration: 0.4, ease: "power3.inOut" }, 1.95);
+      tl.fromTo("#sh-b img", { scale: 1.12, x: 60, transformOrigin: "55% 60%" }, { scale: 1.02, x: 0, duration: 2.3, ease: "power2.out" }, 1.95);
+      words("#lb-b", 2.1);
+      out("#lb-b", 3.75);
+      // C: whip, slow drift over the lagoon
+      tl.fromTo("#sh-c", { x: 1920 }, { x: 0, duration: 0.4, ease: "power3.inOut" }, 3.85);
+      tl.fromTo("#sh-c img", { scale: 1.03, y: 0, transformOrigin: "50% 40%" }, { scale: 1.12, y: -20, duration: 2.0, ease: "power1.inOut" }, 3.85);
+      words("#lb-c", 4.0);
+      out("#lb-c", 5.5);
+      // into tomorrow: the photo lifts away, the 3D projection is underneath
+      tl.to("#sh-a, #sh-b, #sh-c", { clipPath: "inset(0% 0% 100% 0%)", duration: 0.35, ease: "power3.in" }, 5.5);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["sites"] = tl;
+    })();
+  </script>
+</template>
