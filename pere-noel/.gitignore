@@ -1,0 +1,8 @@
+.hyperframes/artifacts/
+.media/
+renders/*.tmp
+node_modules/
+renders/work-*/
+renders/.*
+.hyperframes/preview/
+.hyperframes/*-lock/

@@ -1,0 +1,174 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: var(--color-brand, #d7263d);
+      font-family: var(--font-display, "Outfit"), sans-serif;
+      color: #ffffff;
+    }
+    #ec-ground {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 65% at 50% 48%, #e0344b 0%, #b81e33 100%);
+    }
+    #ec-snow i {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+    }
+    #ec-mark {
+      position: absolute;
+      left: 390px;
+      top: 330px;
+      width: 300px;
+      height: 360px;
+    }
+    #ec-mark svg {
+      width: 300px;
+      height: 360px;
+      overflow: visible;
+    }
+    #ec-shadow {
+      position: absolute;
+      left: 405px;
+      top: 650px;
+      width: 270px;
+      height: 70px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(90, 10, 20, 0.45) 0%, rgba(90, 10, 20, 0) 70%);
+    }
+    #ec-word {
+      position: absolute;
+      left: 760px;
+      top: 372px;
+      font-size: 124px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    #ec-tag {
+      position: absolute;
+      left: 766px;
+      top: 522px;
+      font-size: 50px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    #ec-tag .w {
+      display: inline-block;
+      opacity: 0;
+    }
+    #ec-tag .acc {
+      color: var(--color-accent, #f2b33d);
+      font-weight: 800;
+    }
+    #ec-cta {
+      position: absolute;
+      left: 766px;
+      top: 628px;
+      font-size: 38px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    #ec-cta-line {
+      position: absolute;
+      left: 766px;
+      top: 684px;
+      width: 560px;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--color-accent, #f2b33d);
+      transform-origin: 0 50%;
+    }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1920" data-height="1080">
+    <div id="ec-ground"></div>
+    <div id="ec-snow"></div>
+    <div id="ec-shadow"></div>
+    <div id="ec-mark" data-layout-allow-overflow>
+      <svg viewBox="-150 -180 300 360" aria-label="Père Noël & Cie">
+        <g id="ec-body">
+          <polygon points="-130,-51 0,24 0,174 -130,99" fill="#eef2f7" />
+          <polygon points="0,24 130,-51 130,99 0,174" fill="#c9d3e1" />
+          <line x1="-65" y1="-13.5" x2="-65" y2="136.5" stroke="#f2b33d" stroke-width="26" />
+          <line x1="65" y1="-13.5" x2="65" y2="136.5" stroke="#e0a22f" stroke-width="26" />
+        </g>
+        <g id="ec-lid">
+          <polygon points="0,-150 130,-75 130,-51 0,24 -130,-51 -130,-75" fill="#dfe6ef" />
+          <polygon points="-130,-75 0,0 0,24 -130,-51" fill="#e3e9f1" />
+          <polygon points="0,0 130,-75 130,-51 0,24" fill="#bcc8d8" />
+          <polygon points="0,-150 130,-75 0,0 -130,-75" fill="#ffffff" />
+          <line x1="65" y1="-112.5" x2="-65" y2="-37.5" stroke="#f2b33d" stroke-width="26" />
+          <line x1="-65" y1="-112.5" x2="65" y2="-37.5" stroke="#f2b33d" stroke-width="26" />
+          <line x1="-65" y1="-37.5" x2="-65" y2="-13.5" stroke="#f2b33d" stroke-width="26" />
+          <line x1="65" y1="-37.5" x2="65" y2="-13.5" stroke="#e0a22f" stroke-width="26" />
+          <g id="ec-bow">
+            <ellipse cx="-38" cy="-92" rx="40" ry="24" fill="#f2b33d" transform="rotate(-18 -38 -92)" />
+            <ellipse cx="38" cy="-92" rx="40" ry="24" fill="#e0a22f" transform="rotate(18 38 -92)" />
+            <circle cx="0" cy="-86" r="16" fill="#ffcf5c" />
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div id="ec-word" class="clip" data-start="1.05" data-duration="6.55" data-track-index="1" data-var-text="brand-name">Père Noël &amp; Cie</div>
+    <div id="ec-tag" class="clip" data-start="1.9" data-duration="5.7" data-track-index="2">
+      <span class="w">La</span> <span class="w">logistique</span> <span class="w">de</span> <span class="w">la</span> <span class="w acc">magie.</span>
+    </div>
+    <div id="ec-cta" class="clip" data-start="3.2" data-duration="4.4" data-track-index="3" data-var-text="cta">Écrire au Pôle Nord · H0H 0H0</div>
+    <div id="ec-cta-line" class="clip" data-start="3.35" data-duration="4.25" data-track-index="4"></div>
+  </div>
+  <script>
+    (function () {
+      // ambient snow: seeded, positions are functions of timeline time
+      var snow = document.getElementById("ec-snow");
+      var seed = 77;
+      function rnd() {
+        seed = (seed * 16807) % 2147483647;
+        return (seed - 1) / 2147483646;
+      }
+      var flakes = [];
+      for (var i = 0; i < 46; i++) {
+        var f = document.createElement("i");
+        snow.appendChild(f);
+        flakes.push({ el: f, x: rnd() * 1920, y: rnd() * 1080, v: 40 + rnd() * 50, s: 0.5 + rnd() * 0.8 });
+      }
+      var tl = gsap.timeline({ paused: true });
+      var clock = { t: 0 };
+      tl.to(clock, {
+        t: 7.6,
+        duration: 7.6,
+        ease: "none",
+        onUpdate: function () {
+          for (var i = 0; i < flakes.length; i++) {
+            var F = flakes[i];
+            var y = (F.y + clock.t * F.v) % 1100;
+            var x = F.x + Math.sin(clock.t * 0.8 + i) * 14;
+            F.el.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) scale(" + F.s + ")";
+          }
+        },
+      }, 0);
+      tl.fromTo("#ec-ground", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 0);
+      // the gift drops in and lands with a squash
+      tl.fromTo("#ec-mark", { y: -760 }, { y: 0, duration: 0.62, ease: "power3.in" }, 0.15);
+      tl.fromTo("#ec-mark", { scaleY: 1, scaleX: 1, transformOrigin: "50% 100%" }, { scaleY: 0.86, scaleX: 1.08, duration: 0.08, ease: "power2.out" }, 0.77);
+      tl.to("#ec-mark", { scaleY: 1, scaleX: 1, duration: 0.5, ease: "elastic.out(1, 0.45)" }, 0.85);
+      tl.fromTo("#ec-shadow", { opacity: 0, scaleX: 0.3 }, { opacity: 1, scaleX: 1, duration: 0.62, ease: "power3.in" }, 0.15);
+      // the lid pops open
+      tl.fromTo("#ec-lid", { y: 0, rotation: 0, svgOrigin: "-130 -60" }, { y: -58, rotation: -14, duration: 0.5, ease: "back.out(2.2)" }, 1.0);
+      tl.fromTo("#ec-bow", { scale: 1, svgOrigin: "0 -88" }, { scale: 1.18, duration: 0.16, ease: "power2.out" }, 1.02);
+      tl.to("#ec-bow", { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.5)" }, 1.18);
+      // wordmark wipes in out of the gift
+      tl.fromTo("#ec-word", { clipPath: "inset(0% 100% 0% 0%)", x: -40 }, { clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.6, ease: "power3.inOut" }, 1.05);
+      tl.fromTo("#ec-tag .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 1.9);
+      tl.fromTo("#ec-cta", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power4.out" }, 3.2);
+      tl.fromTo("#ec-cta-line", { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: "expo.out" }, 3.35);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["endcard"] = tl;
+    })();
+  </script>
+</template>
