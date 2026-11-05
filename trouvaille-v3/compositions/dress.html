@@ -1,10 +1,10 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; background: #e45846; font-family: "Poppins", sans-serif; }
-    #dr-card { position: absolute; left: 160px; top: 330px; width: 760px; height: 1010px; border-radius: 40px; overflow: hidden; background: #f3e7da; box-shadow: 0 40px 80px rgba(110, 25, 10, 0.35); }
-    #dr-card img { position: absolute; left: 0; top: 0; width: 760px; height: 1010px; object-fit: cover; }
-    #dr-scan { position: absolute; left: 0; top: 0; width: 760px; height: 8px; background: #ffffff; box-shadow: 0 0 0 1px rgba(255,255,255,0.4); }
-    #dr-box { position: absolute; left: 227px; top: 148px; width: 358px; height: 830px; border: 6px solid #ffffff; border-radius: 34px; box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.25); }
+    #dr-card { position: absolute; left: 309px; top: 330px; width: 462px; height: 1010px; border-radius: 40px; overflow: hidden; background: #f3e7da; box-shadow: 0 40px 80px rgba(110, 25, 10, 0.35); }
+    #dr-card img { position: absolute; left: 0; top: 0; width: 462px; height: 1010px; object-fit: cover; }
+    #dr-scan { position: absolute; left: 0; top: 0; width: 462px; height: 8px; background: #ffffff; box-shadow: 0 0 0 1px rgba(255,255,255,0.4); }
+    #dr-box { position: absolute; left: 24px; top: 140px; width: 414px; height: 850px; border: 6px solid #ffffff; border-radius: 34px; box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.25); }
     #dr-chip { position: absolute; left: 0; width: 1080px; top: 380px; text-align: center; }
     #dr-chip span { display: inline-flex; align-items: center; gap: 14px; padding: 14px 30px; border-radius: 999px; background: #fff; color: #1b1b1b; font-weight: 700; font-size: 36px; box-shadow: 0 10px 24px rgba(0,0,0,0.2); }
     #dr-chip b { width: 16px; height: 16px; border-radius: 50%; background: #e45846; display: inline-block; }
@@ -25,8 +25,8 @@
   <script>
     (function () {
       var tl = gsap.timeline({ paused: true });
-      gsap.set("#pp0", { x: 470, y: 900 });
-      gsap.set("#pp1", { x: 110, y: 1060 });
+      gsap.set("#pp0", { x: 560, y: 760 });
+      gsap.set("#pp1", { x: 70, y: 1000 });
       tl.fromTo("#dr-card", { y: 900, rotation: 8, scale: 0.9 }, { y: 0, rotation: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 0);
       tl.fromTo("#dr-t1 .w", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 0.15);
       // the photo is scanned, then the dress is framed and named
