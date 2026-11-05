@@ -931,5 +931,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "a616c51e-c269-4c5f-9844-482c231b3bef",
+      "completedAt": 1793900436842,
+      "output": "/home/user/designgt/vitib/film/renders/vitib-itf-ivoatech.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
