@@ -12,3 +12,10 @@ trouvaille/.hyperframes/artifacts/
 trouvaille/.hyperframes/preview/
 trouvaille/.hyperframes/*-lock/
 trouvaille/.media/
+trouvaille-v2/renders/work-*/
+trouvaille-v2/renders/.*
+trouvaille-v2/.hyperframes/artifacts/
+trouvaille-v2/.hyperframes/preview/
+trouvaille-v2/.hyperframes/*-lock/
+trouvaille-v2/.media/
+trouvaille/capture-site/
