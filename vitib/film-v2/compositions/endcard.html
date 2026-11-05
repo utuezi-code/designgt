@@ -1,0 +1,42 @@
+<template>
+  <style>
+    @font-face { font-family: "Proxima Nova"; font-weight: 400; src: url("assets/fonts/ProximaNova-Regular.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 600; src: url("assets/fonts/ProximaNova-Semibold.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 700; src: url("assets/fonts/ProximaNova-Bold.ttf") format("truetype"); }
+  </style>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Proxima Nova", sans-serif; }
+    #ec-iris { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 75% at 50% 45%, #ffffff 0%, #f6f1ea 100%); }
+    #ec-logo { position: absolute; left: 610px; top: 250px; width: 700px; height: auto; }
+    #ec-line { position: absolute; left: 610px; top: 556px; width: 700px; height: 4px; background: var(--color-accent, #ed6d0c); transform-origin: 0 50%; }
+    #ec-tag { position: absolute; left: 0; width: 1920px; top: 600px; text-align: center; font-weight: 700; font-size: 54px; color: var(--color-ink, #1a2b56); letter-spacing: -0.01em; }
+    #ec-tag .w { display: inline-block; opacity: 0; }
+    #ec-tag .acc { color: #d2600b; }
+    #ec-nums { position: absolute; left: 0; width: 1920px; top: 690px; text-align: center; font-weight: 600; font-size: 36px; color: #3b4a6e; }
+    #ec-nums b { color: #1a2b56; }
+    #ec-cta { position: absolute; left: 0; width: 1920px; top: 776px; display: flex; justify-content: center; align-items: center; gap: 36px; }
+    #ec-btn { padding: 22px 46px; border-radius: 999px; background: var(--color-accent, #ed6d0c); color: #fff; font-weight: 700; font-size: 38px; }
+    #ec-url { font-weight: 700; font-size: 38px; color: #1a2b56; }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1920" data-height="1080">
+    <div id="ec-iris"></div>
+    <img id="ec-logo" class="clip" data-start="0.45" data-duration="5.05" data-track-index="1" src="assets/brand/vitib-logo.png" alt="VITIB Côte d'Ivoire" />
+    <div id="ec-line" class="clip" data-start="0.95" data-duration="4.55" data-track-index="2"></div>
+    <div id="ec-tag" class="clip" data-start="1.15" data-duration="4.35" data-track-index="3"><span class="w">Plus</span> <span class="w">qu'une</span> <span class="w">zone</span> <span class="w">technologique :</span> <span class="w">un</span> <span class="w acc">écosystème.</span></div>
+    <div id="ec-nums" class="clip" data-start="1.9" data-duration="3.6" data-track-index="4">D'ici 2030 : <b>+12 000 emplois</b> · <b>+100 Mds</b> d'investissements</div>
+    <div id="ec-cta" class="clip" data-start="2.5" data-duration="3.0" data-track-index="5"><span id="ec-btn">Installez-vous et innovez ↗</span><span id="ec-url">vitib.ci</span></div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo("#ec-iris", { clipPath: "circle(0% at 50% 52%)" }, { clipPath: "circle(75% at 50% 52%)", duration: 0.55, ease: "power3.in" }, 0);
+      tl.fromTo("#ec-logo", { clipPath: "inset(0% 100% 0% 0%)", scale: 0.94 }, { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 0.8, ease: "power3.out" }, 0.45);
+      tl.fromTo("#ec-line", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.95);
+      tl.fromTo("#ec-tag .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 1.15);
+      tl.fromTo("#ec-nums", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power4.out" }, 1.9);
+      tl.fromTo("#ec-cta", { opacity: 0, y: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }, 2.5);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["endcard"] = tl;
+    })();
+  </script>
+</template>

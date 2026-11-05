@@ -1,0 +1,67 @@
+<template>
+  <style>
+    @font-face { font-family: "Proxima Nova"; font-weight: 400; src: url("assets/fonts/ProximaNova-Regular.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 600; src: url("assets/fonts/ProximaNova-Semibold.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 700; src: url("assets/fonts/ProximaNova-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #1a2b56; font-family: "Proxima Nova", sans-serif; color: #fff; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #ed6d0c; }
+    .full { position: absolute; left: 0; top: -2px; width: 1920px; height: 1083px; }
+    .grade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,24,52,0.78) 0%, rgba(14,24,52,0.35) 45%, rgba(14,24,52,0.05) 75%); }
+    .k { display: block; font-weight: 700; font-size: 32px; letter-spacing: 0.14em; color: #ed6d0c; margin-bottom: 18px; }
+    .H { display: block; font-weight: 700; font-size: 112px; line-height: 1.02; letter-spacing: -0.02em; }
+    .S { display: block; margin-top: 20px; font-weight: 400; font-size: 42px; color: #e6ebf5; }
+    .rule { display: block; width: 120px; height: 6px; border-radius: 3px; background: #ed6d0c; margin: 26px 0 0; transform-origin: 0 50%; }
+    .note { position: absolute; right: 120px; bottom: 60px; padding: 8px 18px; border-radius: 10px; background: rgba(10,18,40,0.55); color: #fff; font-weight: 600; font-size: 28px; }
+    #mp-still, #mp-video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    #mp-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,24,52,0.55) 0%, rgba(14,24,52,0.1) 40%, rgba(14,24,52,0.25) 100%); }
+    #mp-svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    .pl { position: absolute; left: 0; top: 0; padding: 12px 26px; border-radius: 999px; background: #fff; color: #1a2b56; font-weight: 700; font-size: 34px; white-space: nowrap; opacity: 0; box-shadow: 0 10px 26px rgba(0,0,0,0.3); }
+    #mp-min { position: absolute; left: 0; top: 0; padding: 14px 30px; border-radius: 999px; background: #ed6d0c; color: #fff; font-weight: 700; font-size: 44px; opacity: 0; box-shadow: 0 12px 28px rgba(0,0,0,0.35); }
+    #mp-tx { position: absolute; left: 120px; top: 110px; }
+    #mp-zoom { position: absolute; inset: 0; transform-origin: 1485px 877px; }
+    #mp-credit { position: absolute; left: 120px; bottom: 56px; padding: 6px 14px; border-radius: 10px; background: rgba(10,18,40,0.55); color: #fff; font-size: 22px; }
+
+  </style>
+  <div id="root" data-composition-id="map" data-width="1920" data-height="1080" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="mp-zoom">
+      <img id="mp-still" src="assets/map/abj-bassam-end.jpg" alt="Vue satellite d'Abidjan à Grand-Bassam" />
+      <video id="mp-video" class="clip" src="assets/map/abj-bassam.mp4" muted playsinline data-start="0" data-duration="3.2" data-playback-rate="1.4" data-track-index="9"></video>
+      <div id="mp-tint"></div>
+      <svg id="mp-svg" viewBox="0 0 1920 1080">
+        <path id="mp-route" d="M507,559 C767,729 1125,807 1485,877" fill="none" stroke="#ed6d0c" stroke-width="9" stroke-linecap="round" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110"/>
+        <g id="pa" transform="translate(507,559)" opacity="0"><circle r="30" fill="rgba(237,109,12,0.3)"/><circle r="15" fill="#fff"/><circle r="9" fill="#ed6d0c"/></g>
+        <g id="pb" transform="translate(1485,877)" opacity="0"><circle r="34" fill="rgba(237,109,12,0.3)"/><circle r="17" fill="#fff"/><circle r="10" fill="#ed6d0c"/></g>
+      </svg>
+      <div class="pl" id="la" style="left:357px;top:449px">Aéroport d'Abidjan</div>
+      <div class="pl" id="lb" style="left:1235px;top:917px">Grand-Bassam</div>
+      <div id="mp-min" style="left:906px;top:708px">15 min</div>
+    </div>
+    <div id="mp-tx" class="clip" data-start="0.3" data-duration="4.3" data-track-index="1"><span class="k" style="color:#ffb07a"><span class="w">VITIB · CÔTE D'IVOIRE</span></span><span class="H"><span class="w">À</span> <span class="w acc">15</span> <span class="w acc">minutes</span></span><span class="S"><span class="w">de</span> <span class="w">l'aéroport</span> <span class="w">international</span> <span class="w">d'Abidjan</span></span></div>
+    <div id="mp-credit" data-layout-ignore>Imagerie : Esri, Maxar, Earthstar Geographics</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, y: 24, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, stagger: g || 0.07, ease: "expo.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.2, stagger: 0.02, ease: "power2.in" }, at); }
+      function count(id, to, at, dur, fmt) { var o = { v: 0 }, el = document.getElementById(id); tl.fromTo(o, { v: 0 }, { v: to, duration: dur, ease: "power3.out", onUpdate: function () { el.textContent = fmt(Math.round(o.v)); } }, at); }
+      var fmtK = function (n) { return n.toLocaleString("fr-FR").replace(/\u202f|\u00a0/g, " "); };
+
+      gsap.set("#la, #lb, #mp-min", { opacity: 0 });
+      words("#mp-tx", 0.35, 0.08);
+      tl.fromTo("#pa", { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.4)" }, 2.3);
+      tl.fromTo("#la", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 2.4);
+      tl.fromTo("#mp-route", { strokeDashoffset: 110 }, { strokeDashoffset: 0, duration: 1.1, ease: "power2.inOut" }, 2.6);
+      tl.fromTo("#mp-min", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 3.1);
+      tl.fromTo("#pb", { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.4)" }, 3.6);
+      tl.fromTo("#lb", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 3.7);
+      out("#mp-tx", 4.4);
+      // dive into Grand-Bassam
+      tl.to("#mp-zoom", { scale: 3.2, filter: "blur(6px)", duration: 0.7, ease: "power3.in" }, 4.55);
+      tl.to("#mp-credit", { opacity: 0, duration: 0.2 }, 4.5);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["map"] = tl;
+    })();
+  </script>
+</template>

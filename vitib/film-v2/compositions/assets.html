@@ -1,0 +1,58 @@
+<template>
+  <style>
+    @font-face { font-family: "Proxima Nova"; font-weight: 400; src: url("assets/fonts/ProximaNova-Regular.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 600; src: url("assets/fonts/ProximaNova-Semibold.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 700; src: url("assets/fonts/ProximaNova-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #1a2b56; font-family: "Proxima Nova", sans-serif; color: #fff; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #ed6d0c; }
+    .full { position: absolute; left: 0; top: -2px; width: 1920px; height: 1083px; }
+    .grade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,24,52,0.78) 0%, rgba(14,24,52,0.35) 45%, rgba(14,24,52,0.05) 75%); }
+    .k { display: block; font-weight: 700; font-size: 32px; letter-spacing: 0.14em; color: #ed6d0c; margin-bottom: 18px; }
+    .H { display: block; font-weight: 700; font-size: 112px; line-height: 1.02; letter-spacing: -0.02em; }
+    .S { display: block; margin-top: 20px; font-weight: 400; font-size: 42px; color: #e6ebf5; }
+    .rule { display: block; width: 120px; height: 6px; border-radius: 3px; background: #ed6d0c; margin: 26px 0 0; transform-origin: 0 50%; }
+    .note { position: absolute; right: 120px; bottom: 60px; padding: 8px 18px; border-radius: 10px; background: rgba(10,18,40,0.55); color: #fff; font-weight: 600; font-size: 28px; }
+    #as-bg { position: absolute; inset: 0; }
+    #as-bg img { filter: blur(18px) saturate(0.7); transform: scale(1.1); }
+    #as-veil { position: absolute; inset: 0; background: rgba(20,32,68,0.72); }
+    #as-head { position: absolute; left: 120px; top: 110px; }
+    .it { position: absolute; left: 0; top: 330px; width: 1920px; text-align: center; }
+    .it .ic { display: block; margin: 0 auto 30px; width: 200px; height: 200px; }
+    .it .ic * { stroke-dasharray: 100 120; stroke-dashoffset: 110; }
+    .it .H { font-size: 120px; }
+
+  </style>
+  <div id="root" data-composition-id="assets" data-width="1920" data-height="1080" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="as-bg"><img class="full" src="assets/site/zone-a.jpg" alt="" /></div>
+    <div id="as-veil"></div>
+    <div id="as-head" class="clip" data-start="0.1" data-duration="6.2" data-track-index="1"><span class="k"><span class="w">CONNECTIVITÉ, CONFORT ET QUALITÉ</span></span></div>
+    <div class="it clip" id="it0" data-start="0.90" data-duration="1.05" data-track-index="2"><svg viewBox="0 0 100 100" class="ic"><g fill="none" stroke="#ed6d0c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"><rect x="20" y="14" width="60" height="22" rx="4" pathLength="100" /><rect x="20" y="42" width="60" height="22" rx="4" pathLength="100" /><path d="M30 25h6M30 53h6M50 64v18M30 82h40" pathLength="100" /></g></svg><span class="H"><span class="w">Fibre optique</span></span><span class="S"><span class="w">& data center</span></span></div>
+    <div class="it clip" id="it1" data-start="1.95" data-duration="1.05" data-track-index="3"><svg viewBox="0 0 100 100" class="ic"><g fill="none" stroke="#ed6d0c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"><path d="M18 86V30l32-16 32 16v56M18 86h64M36 44h8M56 44h8M36 60h8M56 60h8M44 86V74h12v12" pathLength="100" /></g></svg><span class="H"><span class="w">16 000 m²</span></span><span class="S"><span class="w">de bureaux</span></span></div>
+    <div class="it clip" id="it2" data-start="3.00" data-duration="1.05" data-track-index="4"><svg viewBox="0 0 100 100" class="ic"><g fill="none" stroke="#ed6d0c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"><rect x="16" y="22" width="68" height="52" rx="6" pathLength="100" /><path d="M16 38h68M34 56l10 9 20-20" pathLength="100" /></g></svg><span class="H"><span class="w">Guichet unique</span></span><span class="S"><span class="w">toutes les démarches au même endroit</span></span></div>
+    <div class="it clip" id="it3" data-start="4.05" data-duration="1.05" data-track-index="5"><svg viewBox="0 0 100 100" class="ic"><g fill="none" stroke="#ed6d0c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"><circle cx="34" cy="34" r="12" pathLength="100" /><circle cx="66" cy="66" r="12" pathLength="100" /><path d="M74 24L26 76" pathLength="100" /></g></svg><span class="H"><span class="w">0 % d'impôts</span></span><span class="S"><span class="w">pendant 5 ans</span></span></div>
+    <div class="it clip" id="it4" data-start="5.10" data-duration="1.05" data-track-index="6"><svg viewBox="0 0 100 100" class="ic"><g fill="none" stroke="#ed6d0c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"><path d="M50 84s-26-24-26-44a26 26 0 0 1 52 0c0 20-26 44-26 44z" pathLength="100" /><circle cx="50" cy="40" r="10" pathLength="100" /></g></svg><span class="H"><span class="w">+100</span></span><span class="S"><span class="w">entreprises déjà installées</span></span></div>
+
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, y: 24, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, stagger: g || 0.07, ease: "expo.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.2, stagger: 0.02, ease: "power2.in" }, at); }
+      function count(id, to, at, dur, fmt) { var o = { v: 0 }, el = document.getElementById(id); tl.fromTo(o, { v: 0 }, { v: to, duration: dur, ease: "power3.out", onUpdate: function () { el.textContent = fmt(Math.round(o.v)); } }, at); }
+      var fmtK = function (n) { return n.toLocaleString("fr-FR").replace(/\u202f|\u00a0/g, " "); };
+
+      tl.fromTo("#as-veil", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0);
+      tl.fromTo("#as-head .w", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 0.15);
+      for (var i = 0; i < 5; i++) {
+        var at = 0.9 + i * 1.05;
+        tl.fromTo("#it" + i + " .ic *", { strokeDashoffset: 110 }, { strokeDashoffset: 0, duration: 0.55, stagger: 0.06, ease: "power2.out" }, at);
+        tl.fromTo("#it" + i + " .ic", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }, at);
+        words("#it" + i, at + 0.1, 0.05);
+        if (i < 4) tl.to("#it" + i + " .w, #it" + i + " .ic", { opacity: 0, y: -24, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, at + 0.85);
+      }
+      window.__timelines = window.__timelines || {};
+      window.__timelines["assets"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,52 @@
+<template>
+  <style>
+    @font-face { font-family: "Proxima Nova"; font-weight: 400; src: url("assets/fonts/ProximaNova-Regular.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 600; src: url("assets/fonts/ProximaNova-Semibold.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 700; src: url("assets/fonts/ProximaNova-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #1a2b56; font-family: "Proxima Nova", sans-serif; color: #fff; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #ed6d0c; }
+    .full { position: absolute; left: 0; top: -2px; width: 1920px; height: 1083px; }
+    .grade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,24,52,0.78) 0%, rgba(14,24,52,0.35) 45%, rgba(14,24,52,0.05) 75%); }
+    .k { display: block; font-weight: 700; font-size: 32px; letter-spacing: 0.14em; color: #ed6d0c; margin-bottom: 18px; }
+    .H { display: block; font-weight: 700; font-size: 112px; line-height: 1.02; letter-spacing: -0.02em; }
+    .S { display: block; margin-top: 20px; font-weight: 400; font-size: 42px; color: #e6ebf5; }
+    .rule { display: block; width: 120px; height: 6px; border-radius: 3px; background: #ed6d0c; margin: 26px 0 0; transform-origin: 0 50%; }
+    .note { position: absolute; right: 120px; bottom: 60px; padding: 8px 18px; border-radius: 10px; background: rgba(10,18,40,0.55); color: #fff; font-weight: 600; font-size: 28px; }
+    .sh { position: absolute; inset: 0; overflow: hidden; }
+    .tx { position: absolute; left: 120px; top: 300px; white-space: nowrap; }
+    .big { display: block; font-weight: 700; font-size: 220px; line-height: 0.95; letter-spacing: -0.03em; }
+    .big small { font-size: 96px; letter-spacing: -0.01em; margin-left: 14px; }
+
+  </style>
+  <div id="root" data-composition-id="sites" data-width="1920" data-height="1080" data-layout-allow-overflow data-layout-allow-overlap>
+    <div class="sh" id="sh-a"><img class="full" id="im-a" src="assets/site/zone-a.jpg" alt="Vue aérienne de la zone A du VITIB" /><div class="grade"></div></div>
+    <div class="sh" id="sh-b"><img class="full" id="im-b" src="assets/site/zone-b.jpg" alt="Vue aérienne de la zone B du VITIB" /><div class="grade"></div></div>
+    <div id="ta" class="tx clip" data-start="0.35" data-duration="3.0" data-track-index="1"><span class="k"><span class="w">ZONE A · GRAND-BASSAM</span></span><span class="H"><span class="w">Le</span> <span class="w">hub</span> <span class="w">technologique</span></span><span class="H"><span class="w">de</span> <span class="w acc">Grand-Bassam</span></span><span class="S"><span class="w">302 ha</span> <span class="w">déjà</span> <span class="w">en</span> <span class="w">exploitation</span></span></div>
+    <div id="tb" class="tx clip" data-start="3.5" data-duration="2.75" data-track-index="2"><span class="k"><span class="w">ZONE B</span></span><span class="big"><span class="w" id="ha">0</span><span class="w"><small>hectares</small></span></span><span class="S"><span class="w">organisés</span> <span class="w">en</span> <span class="w acc">3</span> <span class="w acc">zones</span> <span class="w">:</span> <span class="w">A,</span> <span class="w">B</span> <span class="w">et</span> <span class="w">C</span></span></div>
+    <div class="note clip" id="st-note" data-start="0" data-duration="6.3" data-track-index="3" data-layout-ignore>Images réelles du site</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, y: 24, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, stagger: g || 0.07, ease: "expo.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.2, stagger: 0.02, ease: "power2.in" }, at); }
+      function count(id, to, at, dur, fmt) { var o = { v: 0 }, el = document.getElementById(id); tl.fromTo(o, { v: 0 }, { v: to, duration: dur, ease: "power3.out", onUpdate: function () { el.textContent = fmt(Math.round(o.v)); } }, at); }
+      var fmtK = function (n) { return n.toLocaleString("fr-FR").replace(/\u202f|\u00a0/g, " "); };
+
+      gsap.set("#sh-b", { clipPath: "inset(0% 0% 0% 100%)" });
+      tl.fromTo("#sh-a", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+      tl.fromTo("#im-a", { scale: 1.28, filter: "blur(10px)", transformOrigin: "50% 85%" }, { scale: 1.04, filter: "blur(0px)", duration: 3.6, ease: "expo.out" }, 0);
+      words("#ta", 0.35, 0.06);
+      out("#ta", 3.1);
+      // wipe to zone B along the road
+      tl.fromTo("#sh-b", { clipPath: "inset(0% 0% 0% 100%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.55, ease: "power3.inOut" }, 3.25);
+      tl.fromTo("#im-b", { scale: 1.14, x: 80, transformOrigin: "55% 55%" }, { scale: 1.03, x: 0, duration: 3.0, ease: "power2.out" }, 3.25);
+      words("#tb", 3.55, 0.06);
+      count("ha", 624, 3.6, 1.4, function (n) { return n; });
+      out("#tb", 6.0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["sites"] = tl;
+    })();
+  </script>
+</template>

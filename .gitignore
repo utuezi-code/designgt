@@ -37,3 +37,9 @@ trouvaille-commercant/.hyperframes/artifacts/
 trouvaille-commercant/.hyperframes/preview/
 trouvaille-commercant/.hyperframes/*-lock/
 trouvaille-commercant/.media/
+vitib/film-v2/renders/work-*/
+vitib/film-v2/renders/.*
+vitib/film-v2/.hyperframes/artifacts/
+vitib/film-v2/.hyperframes/preview/
+vitib/film-v2/.hyperframes/*-lock/
+vitib/film-v2/.media/

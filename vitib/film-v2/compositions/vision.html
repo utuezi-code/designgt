@@ -1,0 +1,48 @@
+<template>
+  <style>
+    @font-face { font-family: "Proxima Nova"; font-weight: 400; src: url("assets/fonts/ProximaNova-Regular.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 600; src: url("assets/fonts/ProximaNova-Semibold.ttf") format("truetype"); }
+    @font-face { font-family: "Proxima Nova"; font-weight: 700; src: url("assets/fonts/ProximaNova-Bold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #1a2b56; font-family: "Proxima Nova", sans-serif; color: #fff; }
+    .w { display: inline-block; opacity: 0; }
+    .acc { color: #ed6d0c; }
+    .full { position: absolute; left: 0; top: -2px; width: 1920px; height: 1083px; }
+    .grade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,24,52,0.78) 0%, rgba(14,24,52,0.35) 45%, rgba(14,24,52,0.05) 75%); }
+    .k { display: block; font-weight: 700; font-size: 32px; letter-spacing: 0.14em; color: #ed6d0c; margin-bottom: 18px; }
+    .H { display: block; font-weight: 700; font-size: 112px; line-height: 1.02; letter-spacing: -0.02em; }
+    .S { display: block; margin-top: 20px; font-weight: 400; font-size: 42px; color: #e6ebf5; }
+    .rule { display: block; width: 120px; height: 6px; border-radius: 3px; background: #ed6d0c; margin: 26px 0 0; transform-origin: 0 50%; }
+    .note { position: absolute; right: 120px; bottom: 60px; padding: 8px 18px; border-radius: 10px; background: rgba(10,18,40,0.55); color: #fff; font-weight: 600; font-size: 28px; }
+    #vi-bg { position: absolute; inset: 0; overflow: hidden; }
+    #vi-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,24,52,0.15) 0%, rgba(14,24,52,0.25) 50%, rgba(14,24,52,0.8) 100%); }
+    #vi-w { position: absolute; left: 0; width: 1920px; top: 640px; text-align: center; white-space: nowrap; }
+    #vi-w .H { display: inline; font-size: 100px; }
+    #vi-n { position: absolute; left: 0; width: 1920px; top: 820px; text-align: center; font-weight: 600; font-size: 44px; }
+    #vi-n b { color: #ffa35c; }
+
+  </style>
+  <div id="root" data-composition-id="vision" data-width="1920" data-height="1080" data-layout-allow-overflow data-layout-allow-overlap>
+    <div id="vi-bg"><img class="full" id="vi-img" src="assets/site/zone-c.jpg" alt="Vue aérienne de la zone C et de la lagune" /></div>
+    <div id="vi-veil"></div>
+    <div id="vi-w" class="clip" data-start="0.3" data-duration="5.4" data-track-index="1"><span class="H"><span class="w">Travailler.</span> <span class="w">Innover.</span> <span class="w">Entreprendre.</span> <span class="w acc">Vivre.</span></span></div>
+    <div id="vi-n" class="clip" data-start="2.5" data-duration="3.2" data-track-index="2"><span class="w">D'ici 2030 :</span> <span class="w"><b>+12 000</b> emplois</span> <span class="w">·</span> <span class="w"><b>+100 Mds</b> d'investissements</span></div>
+    <div class="note clip" data-start="0" data-duration="5.8" data-track-index="3" data-layout-ignore>Images réelles du site · Zone C</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      function words(sel, at, g) { tl.fromTo(sel + " .w", { opacity: 0, y: 24, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, stagger: g || 0.07, ease: "expo.out" }, at); }
+      function out(sel, at) { tl.to(sel + " .w", { opacity: 0, filter: "blur(10px)", duration: 0.2, stagger: 0.02, ease: "power2.in" }, at); }
+      function count(id, to, at, dur, fmt) { var o = { v: 0 }, el = document.getElementById(id); tl.fromTo(o, { v: 0 }, { v: to, duration: dur, ease: "power3.out", onUpdate: function () { el.textContent = fmt(Math.round(o.v)); } }, at); }
+      var fmtK = function (n) { return n.toLocaleString("fr-FR").replace(/\u202f|\u00a0/g, " "); };
+
+      tl.fromTo("#vi-bg", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power3.inOut" }, 0);
+      tl.fromTo("#vi-img", { scale: 1.18, y: 40, transformOrigin: "50% 40%" }, { scale: 1.02, y: 0, duration: 5.8, ease: "power2.out" }, 0);
+      tl.fromTo("#vi-w .w", { opacity: 0, y: 30, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, stagger: 0.48, ease: "expo.out" }, 0.4);
+      tl.fromTo("#vi-n .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, stagger: 0.12, ease: "power3.out" }, 2.6);
+      tl.to("#vi-w .w, #vi-n .w", { opacity: 0, filter: "blur(10px)", duration: 0.25, ease: "power2.in" }, 5.45);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["vision"] = tl;
+    })();
+  </script>
+</template>
