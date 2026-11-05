@@ -1,2 +1,8 @@
 vitib/capture/
 vitib/capture-2/
+vitib/film/renders/work-*/
+vitib/film/renders/.*
+vitib/film/.hyperframes/artifacts/
+vitib/film/.hyperframes/preview/
+vitib/film/.hyperframes/*-lock/
+vitib/film/.media/
