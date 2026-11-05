@@ -12,3 +12,4 @@
 
 ## Images
 - Maquette 3D de synthèse construite dans HyperFrames (Three.js). Aucune photo : vue d'illustration du projet, mentionnée à l'écran.
+- Vues aériennes des zones A, B et C : fournies par le client (images réelles du site).
